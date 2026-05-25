@@ -356,7 +356,8 @@ function initImageErrorHandling() {
 
 function initHeroSlideshow() {
   const slides = document.querySelectorAll('.hero-bg-img');
-  const messages = document.querySelectorAll('.hero-message');
+  const features = document.querySelectorAll('.hero-feature');
+  const uses = document.querySelectorAll('.hero-use');
   const dots = document.querySelectorAll('.hero-indicators button');
   if (slides.length < 2) return;
 
@@ -368,7 +369,8 @@ function initHeroSlideshow() {
   function go(idx) {
     current = ((idx % total) + total) % total;
     slides.forEach((el, i) => el.classList.toggle('is-active', i === current));
-    messages.forEach((el, i) => el.classList.toggle('is-active', i === current));
+    features.forEach((el, i) => el.classList.toggle('is-active', i === current));
+    uses.forEach((el, i) => el.classList.toggle('is-active', i === current));
     dots.forEach((el, i) => {
       el.classList.toggle('is-active', i === current);
       el.setAttribute('aria-selected', String(i === current));
