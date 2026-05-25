@@ -437,7 +437,7 @@ body.drawer-open { overflow: hidden; }
   background: var(--bg-pastel);
   min-height: 520px;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 /* 背景スライド群（クロスフェード） */
@@ -525,18 +525,28 @@ body.drawer-open { overflow: hidden; }
   border-radius: 50px;
 }
 
-/* テキストオーバーレイ（画像の上に重ねる・グラデーションなし） */
+/* テキストオーバーレイ（画像の天井部分に配置・グラデーションなし） */
 .hero-overlay {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 32px 20px 36px;
+  padding: 22px 20px 28px;
   background: transparent;
 }
 
 .hero-text-box {
   max-width: var(--container-max);
   margin: 0 auto;
+  /* 天井の空間に配置するための、品のある半透明カード */
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  border-radius: 18px;
+  padding: 22px 26px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 8px 32px rgba(20, 40, 80, 0.18),
+    0 2px 8px rgba(20, 40, 80, 0.08);
 }
 
 /* 文字を画像の上に直接置く品のある見せ方：
@@ -560,22 +570,20 @@ body.drawer-open { overflow: hidden; }
 .hero-brand {
   font-family: var(--font-serif);
   color: var(--text-dark);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   letter-spacing: 0.04em;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.92),
-    0 0 14px rgba(255, 255, 255, 0.95),
-    0 0 28px rgba(255, 255, 255, 0.9);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.18);
 }
 
 .hero-brand-owner {
   display: block;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--text-body);
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
 }
 
 .hero-brand-main {
@@ -584,7 +592,7 @@ body.drawer-open { overflow: hidden; }
   font-size: 2.6rem;
   font-weight: 900;
   line-height: 1.3;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .hero-brand .accent {
@@ -594,27 +602,21 @@ body.drawer-open { overflow: hidden; }
 /* スライド毎：魅力コピー（中）＋ 用途（小） */
 .hero-feature {
   font-family: var(--font-serif);
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-dark);
   line-height: 1.55;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: 0.04em;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9),
-    0 0 12px rgba(255, 255, 255, 0.95);
 }
 
 .hero-use {
   font-family: var(--font-serif);
-  font-size: 0.95rem;
-  color: var(--text-body);
+  font-size: 0.9rem;
+  color: var(--text-muted);
   font-weight: 600;
   letter-spacing: 0.06em;
   line-height: 1.7;
-  text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9),
-    0 0 10px rgba(255, 255, 255, 0.95);
 }
 
 .hero-btns {
@@ -1813,15 +1815,32 @@ body.drawer-open { overflow: hidden; }
    -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
   :root {
-    --section-py: 56px;
+    --section-py: 40px;
   }
+
+  /* スマホで間延び解消：個別padding持つセクションも圧縮 */
+  .studio-photo-section { padding: 32px 0 !important; }
+  .site-footer { padding: 36px 0 0 !important; }
+  .section-sub { margin-bottom: 28px; }
+  .section-title { margin-bottom: 4px; }
 
   .hero {
     min-height: 420px;
   }
 
   .hero-overlay {
-    padding: 32px 18px 48px;
+    padding: 16px 14px 20px;
+  }
+
+  /* スマホ用テキストカード調整 */
+  .hero-text-box {
+    padding: 18px 18px 20px;
+    border-radius: 14px;
+  }
+
+  .hero-brand {
+    margin-bottom: 12px;
+    padding-bottom: 10px;
   }
 
   .hero-messages { min-height: 100px; }
