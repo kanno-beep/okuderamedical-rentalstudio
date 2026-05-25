@@ -551,37 +551,67 @@ body.drawer-open { overflow: hidden; }
   font-weight: 700;
   padding: 4px 14px;
   border-radius: 50px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   letter-spacing: 0.08em;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
 }
 
-.hero-title {
+/* メインブランド：オクデラメディカル + 多目的レンタルスタジオ */
+.hero-brand {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
-  font-weight: 700;
   color: var(--text-dark);
-  line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   letter-spacing: 0.04em;
   text-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 1px 0 rgba(255, 255, 255, 0.92),
     0 0 14px rgba(255, 255, 255, 0.95),
-    0 0 28px rgba(255, 255, 255, 0.85);
+    0 0 28px rgba(255, 255, 255, 0.9);
 }
 
-.hero-title .accent {
+.hero-brand-owner {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-body);
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.hero-brand-main {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+}
+
+.hero-brand .accent {
   color: var(--brand-primary);
 }
 
-.hero-sub {
+/* スライド毎：魅力コピー（中）＋ 用途（小） */
+.hero-feature {
   font-family: var(--font-serif);
-  font-size: 1rem;
-  color: var(--text-body);
-  margin-bottom: 22px;
-  font-weight: 600;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.55;
+  margin-bottom: 6px;
   letter-spacing: 0.04em;
-  line-height: 1.75;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.9),
+    0 0 12px rgba(255, 255, 255, 0.95);
+}
+
+.hero-use {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-body);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.9),
     0 0 10px rgba(255, 255, 255, 0.95);
@@ -1800,14 +1830,25 @@ body.drawer-open { overflow: hidden; }
   .hero-indicators button { width: 8px; height: 8px; }
   .hero-indicators button.is-active { width: 22px; }
 
-  .hero-title {
-    font-size: 1.55rem;
-    line-height: 1.5;
+  .hero-brand-owner {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
   }
 
-  .hero-sub {
-    font-size: 0.95rem;
-    margin-bottom: 20px;
+  .hero-brand-main {
+    font-size: 1.85rem;
+    line-height: 1.3;
+  }
+
+  .hero-feature {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 4px;
+  }
+
+  .hero-use {
+    font-size: 0.85rem;
+    margin-bottom: 0;
   }
 
   /* スマホでQRセクションは省略（スマホ来訪者には不要） */
@@ -1882,23 +1923,6 @@ body.drawer-open { overflow: hidden; }
 
   .hero-content {
     padding: 28px 16px;
-  }
-
-  /* スマホでヒーローCTAをタップしやすく */
-  .hero-btns {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-    justify-content: center;
-    padding: 16px 24px;
-    font-size: 1rem;
-    min-height: 52px;
-    border-radius: 14px;
-    font-weight: 800;
-    letter-spacing: 0.03em;
   }
 
   .hero-badge {

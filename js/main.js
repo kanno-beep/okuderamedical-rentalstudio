@@ -293,15 +293,15 @@ function initFloatingCTA() {
   const cta = document.querySelector('.floating-cta');
   if (!cta) return;
 
-  // ページ読み込み時は非表示、スクロール後に表示
-  cta.style.opacity = '0';
-  cta.style.transform = 'translateY(10px)';
+  // ページ読み込み直後から表示（ヒーロー内CTAを排した分、ここを常時CTAに）
+  cta.style.opacity = '1';
+  cta.style.transform = 'translateY(0)';
   cta.style.transition = 'opacity 0.3s, transform 0.3s';
 
-  let shown = false;
+  let shown = true;
 
   function checkScroll() {
-    if (!shown && window.scrollY > 300) {
+    if (!shown) {
       cta.style.opacity = '1';
       cta.style.transform = 'translateY(0)';
       shown = true;
