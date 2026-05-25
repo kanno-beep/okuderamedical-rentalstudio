@@ -1,5 +1,12 @@
 # オクデラメディカル 貸しスタジオ - ウェブサイト
 
+## 🌐 公開URL
+
+| 用途 | URL |
+|------|-----|
+| **実サイト** | https://kanno-beep.github.io/okuderamedical-rentalstudio/ |
+| **クライアント提示モックアップ** | https://kanno-beep.github.io/okuderamedical-rentalstudio/mockup.html |
+
 ## プロジェクト概要
 東京都北区王子のウエルネスオクデラビルズ3Fに入居する「貸しスタジオ」のQRコード連動型スマートフォン予約サイトです。
 
