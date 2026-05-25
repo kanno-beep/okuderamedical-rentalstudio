@@ -566,55 +566,53 @@ body.drawer-open { overflow: hidden; }
   display: block;
 }
 
-/* 白抜き文字：白文字＋濃紺の輪郭 */
+/* 白抜きバッジ：ブランドブルー地に白文字 */
 .hero-brand-owner {
-  display: block;
+  display: inline-block;
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #FFFFFF;
+  background: var(--brand-primary);
   letter-spacing: 0.12em;
-  margin-bottom: 6px;
-  -webkit-text-stroke: 0.5px var(--text-dark);
-  text-shadow:
-    -1.5px -1.5px 0 var(--text-dark),
-     1.5px -1.5px 0 var(--text-dark),
-    -1.5px  1.5px 0 var(--text-dark),
-     1.5px  1.5px 0 var(--text-dark),
-     0 2px 8px rgba(0,0,0,0.25);
+  margin-bottom: 12px;
+  padding: 5px 18px 6px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.32);
 }
 
-/* 大きく目立つメイン見出し */
+/* 中見出し：多目的レンタルスタジオ（スマホでも1行に収まるサイズ） */
 .hero-brand-main {
   display: block;
   font-family: var(--font-serif);
-  font-size: 3.4rem;
+  font-size: 3rem;
   font-weight: 900;
   line-height: 1.25;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--text-dark);
   text-shadow:
     0 2px 0 rgba(255, 255, 255, 1),
-    0 0 12px rgba(255, 255, 255, 0.95),
-    0 0 22px rgba(255, 255, 255, 0.85);
+    0 0 14px rgba(255, 255, 255, 0.98),
+    0 0 26px rgba(255, 255, 255, 0.88);
 }
 
 .hero-brand .accent {
   color: var(--brand-primary);
 }
 
-/* 魅力コピー：大きく目立たせる */
+/* 大見出し（魅力コピー）：最も大きく・全体で一番目立つ */
 .hero-features {
   position: relative;
-  min-height: 100px;
+  min-height: 130px;
+  margin-top: 6px;
 }
 
 .hero-feature {
   font-family: var(--font-serif);
-  font-size: 2.2rem;
+  font-size: 3.6rem;
   font-weight: 900;
   color: var(--text-dark);
-  line-height: 1.4;
+  line-height: 1.32;
   letter-spacing: 0.06em;
   position: absolute;
   inset: 0;
@@ -623,8 +621,8 @@ body.drawer-open { overflow: hidden; }
   transition: opacity 0.6s ease, transform 0.6s ease;
   text-shadow:
     0 2px 0 rgba(255, 255, 255, 1),
-    0 0 14px rgba(255, 255, 255, 0.95),
-    0 0 28px rgba(255, 255, 255, 0.85);
+    0 0 16px rgba(255, 255, 255, 0.95),
+    0 0 32px rgba(255, 255, 255, 0.88);
 }
 
 .hero-feature.is-active {
@@ -633,27 +631,27 @@ body.drawer-open { overflow: hidden; }
   position: relative;
 }
 
-/* 用途：下部、ブランド色 */
+/* 用途：下部、太字で目立つ */
 .hero-uses {
   position: relative;
-  min-height: 36px;
+  min-height: 44px;
 }
 
 .hero-use {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   color: var(--brand-primary);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1.6;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
   position: absolute;
   inset: 0;
   opacity: 0;
   transition: opacity 0.6s ease;
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 1),
-    0 0 12px rgba(255, 255, 255, 0.95),
-    0 0 20px rgba(255, 255, 255, 0.85);
+    0 0 14px rgba(255, 255, 255, 0.98),
+    0 0 26px rgba(255, 255, 255, 0.85);
 }
 
 .hero-use.is-active {
@@ -1814,12 +1812,25 @@ body.drawer-open { overflow: hidden; }
 @media (max-width: 900px) {
   .header-nav { display: none; }
   .nav-toggle { display: inline-flex; }
+
+  /* スマホでも場所バッジを表示（ヘッダー下に独立した行で） */
+  .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    row-gap: 4px;
+  }
   .header-location {
-    flex: 1;
-    justify-content: flex-end;
-    font-size: 0.7rem;
-    letter-spacing: 0.04em;
-    margin-right: 8px;
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--brand-primary);
+    font-weight: 700;
+    padding-top: 4px;
+    border-top: 1px dashed var(--accordion-border);
   }
   .header-location-icon { font-size: 0.85rem; }
 
@@ -1875,47 +1886,50 @@ body.drawer-open { overflow: hidden; }
     margin-bottom: 10px;
   }
 
-  /* スマホでは場所情報を非表示（電話番号もアイコンに） */
-  .header-location { display: none; }
-
   /* スマホヒーロー：上部と下部のpadding調整 */
-  .hero { min-height: 560px; }
-  .hero-top { padding: 22px 18px 8px; }
-  .hero-bottom { padding: 8px 18px 56px; }
+  .hero { min-height: 600px; }
+  .hero-top { padding: 18px 14px 8px; }
+  .hero-bottom { padding: 8px 14px 56px; }
 
   .hero-indicators { bottom: 14px; padding: 6px 10px; gap: 8px; }
   .hero-indicators button { width: 8px; height: 8px; }
   .hero-indicators button.is-active { width: 22px; }
 
-  .hero-brand { margin-bottom: 14px; }
+  .hero-brand { margin-bottom: 12px; }
 
+  /* オクデラメディカルの 青地白抜きバッジ */
   .hero-brand-owner {
-    font-size: 0.92rem;
-    margin-bottom: 4px;
-    letter-spacing: 0.12em;
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+    padding: 4px 14px 5px;
   }
 
+  /* 多目的レンタルスタジオ：スマホでも1行に収まるサイズ */
   .hero-brand-main {
-    font-size: 2.2rem;
+    font-size: 1.85rem;
     line-height: 1.25;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
   }
 
-  /* スマホでも魅力コピーは大きく目立つ（2行OK） */
-  .hero-features { min-height: 110px; }
+  /* 大見出し（魅力コピー）：スマホでは2行OK、最も大きく目立つ */
+  .hero-features { min-height: 130px; margin-top: 4px; }
   .hero-feature {
-    font-size: 1.8rem;
-    line-height: 1.35;
+    font-size: 2.3rem;
+    line-height: 1.32;
     letter-spacing: 0.04em;
   }
 
   /* スマホは強制改行を有効にして2行表示 */
   .hero-br-sp { display: inline; }
 
-  .hero-uses { min-height: 28px; }
+  /* 用途：太字でくっきり */
+  .hero-uses { min-height: 32px; }
   .hero-use {
-    font-size: 1rem;
-    letter-spacing: 0.06em;
+    font-size: 1.05rem;
+    letter-spacing: 0.08em;
+    font-weight: 900;
   }
 
   /* スマホでQRセクションは省略（スマホ来訪者には不要） */
