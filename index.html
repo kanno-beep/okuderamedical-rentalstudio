@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>貸しスタジオ | オクデラメディカル ウエルネスオクデラビルズ 3F</title>
+  <meta name="description" content="東京都北区王子の貸しスタジオ。ロッカールーム・シャワー完備。ヨガ・ダンス・セミナーなど多目的に利用できます。">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- QR Code library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-main">貸しスタジオ</span>
+        <span class="logo-sub">オクデラメディカル</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#programs">プログラム</a>
+        <a href="#facilities">施設案内</a>
+        <a href="#pricing">料金</a>
+        <a href="#reservation">予約</a>
+        <a href="tel:0339195111" class="nav-tel">📞 03-3919-5111</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobileDrawer">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- モバイルドロワー -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="drawer-head">
+      <span class="drawer-title">メニュー</span>
+      <button class="drawer-close" id="drawerClose" aria-label="メニューを閉じる">✕</button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="#programs" data-drawer-link>🏃 プログラム一覧</a>
+      <a href="#facilities" data-drawer-link>🏢 施設案内</a>
+      <a href="#pricing" data-drawer-link>💴 料金プラン</a>
+      <a href="#reservation" data-drawer-link>📋 ご予約</a>
+      <a href="#access" data-drawer-link>📍 アクセス</a>
+      <a href="#faq" data-drawer-link>❓ よくある質問</a>
+    </nav>
+    <div class="drawer-foot">
+      <a href="tel:0339195111" class="drawer-tel">📞 03-3919-5111</a>
+      <p class="drawer-hours">受付時間 / 営業時間内</p>
+    </div>
+  </aside>
+
+  <!-- ヒーローセクション -->
+  <section class="hero" id="hero" aria-roledescription="carousel">
+    <!-- 背景スライド群（クロスフェード） -->
+    <div class="hero-bg">
+      <img class="hero-bg-img is-active" data-slide="0" src="Webイラスト/HERO01ヨガ.png" alt="ヨガクラスの開放的なスタジオ" decoding="async">
+      <img class="hero-bg-img" data-slide="1" src="Webイラスト/HERO02バレエ.png" alt="バー＆ミラー完備のバレエスタジオ" decoding="async">
+      <img class="hero-bg-img" data-slide="2" src="Webイラスト/HERO03ダンス.png" alt="ヒップホップ・ストリートダンス練習風景" decoding="async">
+      <img class="hero-bg-img" data-slide="3" src="Webイラスト/HERO04セミナー.png" alt="セミナー・研修会場としての利用" decoding="async">
+    </div>
+
+    <div class="hero-overlay">
+      <div class="hero-text-box">
+        <p class="hero-badge">王子駅すぐ ✦ ウエルネスオクデラビルズ 3F</p>
+
+        <!-- スライド毎のメッセージ -->
+        <div class="hero-messages">
+          <div class="hero-message is-active" data-slide="0">
+            <h1 class="hero-title">心と身体を、<br class="hero-br-sp"><span class="accent">ととのえる</span>。</h1>
+            <p class="hero-sub">ヨガ・ピラティス・ストレッチに最適 ／ 自然光あふれる落ち着いた空間</p>
+          </div>
+          <div class="hero-message" data-slide="1">
+            <h1 class="hero-title"><span class="accent">優雅</span>を、<br class="hero-br-sp">磨く時間。</h1>
+            <p class="hero-sub">バレエ・社交ダンス・キッズダンスに ／ バー＆大型ミラー完備</p>
+          </div>
+          <div class="hero-message" data-slide="2">
+            <h1 class="hero-title"><span class="accent">魅せる</span>を、<br class="hero-br-sp">極める。</h1>
+            <p class="hero-sub">ヒップホップ・K-POP・ジャズダンスに ／ 音響＆防音対応</p>
+          </div>
+          <div class="hero-message" data-slide="3">
+            <h1 class="hero-title">ビジネスを、<br class="hero-br-sp"><span class="accent">前へ進める</span>。</h1>
+            <p class="hero-sub">研修・セミナー・発表会に ／ プロジェクター・Wi-Fi完備</p>
+          </div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="#reservation" class="btn btn-primary">📋 予約・お問い合わせ</a>
+          <a href="tel:0339195111" class="btn btn-hero-tel">📞 03-3919-5111</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- インジケータ＆コントロール -->
+    <div class="hero-indicators" role="tablist" aria-label="ヒーロースライド選択">
+      <button type="button" class="is-active" data-slide="0" role="tab" aria-label="スライド1：ヨガ" aria-selected="true"></button>
+      <button type="button" data-slide="1" role="tab" aria-label="スライド2：バレエ" aria-selected="false"></button>
+      <button type="button" data-slide="2" role="tab" aria-label="スライド3：ダンス" aria-selected="false"></button>
+      <button type="button" data-slide="3" role="tab" aria-label="スライド4：セミナー" aria-selected="false"></button>
+    </div>
+  </section>
+
+  <!-- 施設特徴 -->
+  <section class="features-section" id="facilities">
+    <div class="container">
+      <h2 class="section-title">施設の特徴</h2>
+      <p class="section-sub">快適なスタジオ環境をご用意しています</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚿</div>
+          <h3>ロッカールーム<br>シャワー完備</h3>
+          <p>清潔で広々としたロッカールームとシャワールームを完備。快適にご利用いただけます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔊</div>
+          <h3>音響設備<br>プロジェクター</h3>
+          <p>高品質な音響システムとプロジェクターを完備。ダンスレッスンからセミナーまで対応。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📶</div>
+          <h3>Wi-Fi<br>完備</h3>
+          <p>高速Wi-Fiを完備。オンライン配信や資料共有も快適に行えます。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🪞</div>
+          <h3>鏡張り<br>スタジオ</h3>
+          <p>壁一面の大型ミラー完備。ダンス・ヨガ・体操など様々な動きを確認しながら練習できます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スタジオ写真 -->
+  <section class="studio-photo-section">
+    <div class="container">
+      <div class="studio-photos">
+        <div class="studio-photo-item">
+          <img src="Webイラスト/スタジオ内観.jpg" alt="スタジオ内観・鏡張りの広々としたスペース" loading="lazy"
+            onerror="this.parentElement.style.display='none'">
+          <p class="photo-caption">多目的スタジオ（鏡張り・バレエバー付き）</p>
+        </div>
+        <div class="studio-photo-item">
+          <img src="Webイラスト/スタジオセミナー用内観.jpg" alt="研修・セミナールーム内観" loading="lazy"
+            onerror="this.parentElement.style.display='none'">
+          <p class="photo-caption">研修・セミナールーム（プロジェクター完備）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- プログラム案内（アコーディオン3柱） -->
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <h2 class="section-title">スタジオ活用プログラム</h2>
+      <p class="section-sub">様々な用途にご利用いただけます</p>
+
+      <!-- 柱1: フィットネス・ウェルネス系 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-icon">💪</span>
+          <span class="accordion-label">フィットネス・ウェルネス系</span>
+          <span class="accordion-sub">ヨガ / ピラティス / 太極拳 / ストレッチ など</span>
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body" hidden>
+          <div class="program-grid">
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/ヨガ・ピラティス.png"
+                  alt="ヨガ・ピラティスのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🧘 ヨガ・ピラティス</h3>
+                <p class="program-desc">ヨガマット完備。初心者から上級者まで対応できる広々とした空間です。鏡張りで動きを確認しながら練習できます。</p>
+                <div class="program-tags">
+                  <span class="tag">全年齢対応</span>
+                  <span class="tag">初心者歓迎</span>
+                  <span class="tag">グループOK</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/太極拳・体操.png"
+                  alt="太極拳・体操のイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🥋 太極拳・体操</h3>
+                <p class="program-desc">ゆったりとした動きで心身をリフレッシュ。シニアの方にも安心してご利用いただける穏やかな空間です。</p>
+                <div class="program-tags">
+                  <span class="tag">シニア歓迎</span>
+                  <span class="tag">健康増進</span>
+                  <span class="tag">少人数OK</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/ホットヨガ.jpg"
+                  alt="ホットヨガのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🔥 ホットヨガ</h3>
+                <p class="program-desc">温度設定相談可能。深いストレッチと発汗で心身のデトックス。シャワールームが完備されているので安心です。</p>
+                <div class="program-tags">
+                  <span class="tag">シャワー完備</span>
+                  <span class="tag">温度相談可</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/ストレッチング.jpg"
+                  alt="ストレッチングのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🤸 ストレッチング</h3>
+                <p class="program-desc">全身の柔軟性を高めるストレッチ。木目フロアと鏡張りの環境で、丁寧な動きを確認しながら行えます。</p>
+                <div class="program-tags">
+                  <span class="tag">柔軟性UP</span>
+                  <span class="tag">全年齢対応</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="show-more-wrap">
+            <button type="button" class="show-more-btn" aria-expanded="false">もっと見る</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 柱2: ダンス・パフォーマンス系 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-icon">💃</span>
+          <span class="accordion-label">ダンス・パフォーマンス系</span>
+          <span class="accordion-sub">バレエ / キッズダンス / 社交ダンス / ヒップホップ など</span>
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body" hidden>
+          <div class="program-grid">
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/ダンス・バレエ.png"
+                  alt="ダンス・バレエのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🩰 ダンス・バレエ</h3>
+                <p class="program-desc">バレエバー完備の鏡張りスタジオ。クラシックバレエから現代ダンスまで幅広くご利用いただけます。</p>
+                <div class="program-tags">
+                  <span class="tag">バレエバー完備</span>
+                  <span class="tag">鏡張り</span>
+                  <span class="tag">音響完備</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/キッズダンス.png"
+                  alt="キッズダンスのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🌈 キッズダンス</h3>
+                <p class="program-desc">お子様が安心して楽しめる広々とした空間。木目の床は安全で、大きな鏡で自分のダンスを確認できます。</p>
+                <div class="program-tags">
+                  <span class="tag">子ども歓迎</span>
+                  <span class="tag">安全な床</span>
+                  <span class="tag">明るい空間</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/社交ダンス.png"
+                  alt="社交ダンスのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🕺 社交ダンス</h3>
+                <p class="program-desc">優雅に踊れる広いフロア。ワルツ・タンゴなど各種社交ダンスに対応。音響設備完備で本格的な練習が可能です。</p>
+                <div class="program-tags">
+                  <span class="tag">広々フロア</span>
+                  <span class="tag">カップル歓迎</span>
+                  <span class="tag">音響完備</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/ヒップホップ・ジャズダンス.jpg"
+                  alt="ヒップホップ・ジャズダンスのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🎤 ヒップホップ・ジャズ</h3>
+                <p class="program-desc">大音量でも安心な防音対応。ヒップホップ、ジャズダンス、K-POPなど様々なジャンルのダンス練習に最適です。</p>
+                <div class="program-tags">
+                  <span class="tag">全ジャンル対応</span>
+                  <span class="tag">音響完備</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/KPOP・アイドルダンス.jpg"
+                  alt="K-POP・アイドルダンスのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">⭐ K-POP・アイドルダンス</h3>
+                <p class="program-desc">大型ミラーでフォーメーションを確認しながら練習。グループでの振付練習に最適な広さを確保しています。</p>
+                <div class="program-tags">
+                  <span class="tag">グループOK</span>
+                  <span class="tag">大型ミラー</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="show-more-wrap">
+            <button type="button" class="show-more-btn" aria-expanded="false">もっと見る</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 柱3: その他の活用 -->
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-icon">📋</span>
+          <span class="accordion-label">その他の活用</span>
+          <span class="accordion-sub">セミナー / 研修 / 会議 / 発表会 / ワークショップ など</span>
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body" hidden>
+          <div class="program-grid">
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/セミナー・研修.png"
+                  alt="セミナー・研修のイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">📊 セミナー・研修</h3>
+                <p class="program-desc">プロジェクター・スクリーン完備。企業研修・セミナー・勉強会など多目的にご利用いただけます。Wi-Fi完備。</p>
+                <div class="program-tags">
+                  <span class="tag">プロジェクター完備</span>
+                  <span class="tag">Wi-Fi完備</span>
+                  <span class="tag">最大30名</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/会議・ミーティング.jpg"
+                  alt="会議・ミーティングのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🤝 会議・ミーティング</h3>
+                <p class="program-desc">静かで集中できる環境。少人数の会議からグループディスカッションまで対応。ホワイトボード使用可能。</p>
+                <div class="program-tags">
+                  <span class="tag">静かな環境</span>
+                  <span class="tag">ホワイトボード可</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/ワークショップ・発表会.jpg"
+                  alt="ワークショップ・発表会のイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">🎭 ワークショップ・発表会</h3>
+                <p class="program-desc">発表・演技・プレゼンなど多様な用途に対応。音響・照明設備を活用した本格的なパフォーマンスが可能です。</p>
+                <div class="program-tags">
+                  <span class="tag">音響完備</span>
+                  <span class="tag">多目的対応</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="program-card">
+              <div class="program-card-img-wrap">
+                <img src="Webイラスト/パーソナルトレーニング.jpg"
+                  alt="パーソナルトレーニングのイラスト"
+                  class="program-card-img"
+                  loading="lazy"
+                  onerror="this.src=''; this.parentElement.classList.add('no-img');">
+              </div>
+              <div class="program-card-body">
+                <h3 class="program-name">💪 パーソナルトレーニング</h3>
+                <p class="program-desc">トレーナーと1対1のプライベートセッション。鏡張りのスタジオでフォームを確認しながら効率的なトレーニングが可能です。</p>
+                <div class="program-tags">
+                  <span class="tag">プライベート</span>
+                  <span class="tag">鏡張り</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="show-more-wrap">
+            <button type="button" class="show-more-btn" aria-expanded="false">もっと見る</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 料金プラン -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-sub">お気軽にご利用いただける料金設定</p>
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <span class="pricing-icon">⏰</span>
+            <h3 class="pricing-name">時間利用</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-main">¥2,500</span>
+            <span class="price-unit">/ 1時間</span>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ 1時間単位でのご利用</li>
+            <li>✓ 最低利用時間：1時間</li>
+            <li>✓ 施設使用料込み</li>
+            <li>✓ 音響設備・鏡利用可</li>
+          </ul>
+          <a href="#reservation" class="btn btn-pricing">この料金で予約</a>
+        </div>
+
+        <div class="pricing-card pricing-popular">
+          <div class="popular-badge">🌟 人気No.1</div>
+          <div class="pricing-header">
+            <span class="pricing-icon">🌅</span>
+            <h3 class="pricing-name">半日パック</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-main">¥8,800</span>
+            <span class="price-unit">/ 4時間</span>
+          </div>
+          <div class="price-per-hour">(1時間あたり¥2,200)</div>
+          <ul class="pricing-features">
+            <li>✓ 4時間の連続利用</li>
+            <li>✓ 午前 or 午後の利用</li>
+            <li>✓ 施設設備フル利用可</li>
+            <li>✓ 時間利用より10%お得</li>
+          </ul>
+          <a href="#reservation" class="btn btn-pricing btn-primary">この料金で予約</a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <span class="pricing-icon">🌞</span>
+            <h3 class="pricing-name">1日パック</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-main">¥16,000</span>
+            <span class="price-unit">/ 8時間</span>
+          </div>
+          <div class="price-per-hour">(1時間あたり¥2,000)</div>
+          <ul class="pricing-features">
+            <li>✓ 8時間の連続利用</li>
+            <li>✓ 一日中ご利用可能</li>
+            <li>✓ 施設設備フル利用可</li>
+            <li>✓ 時間利用より20%お得</li>
+          </ul>
+          <a href="#reservation" class="btn btn-pricing">この料金で予約</a>
+        </div>
+
+        <div class="pricing-card pricing-monthly">
+          <div class="pricing-header">
+            <span class="pricing-icon">📅</span>
+            <h3 class="pricing-name">定期利用</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-main">要相談</span>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ 週1回・月4回など定期利用</li>
+            <li>✓ 継続利用割引適用</li>
+            <li>✓ 優先予約枠確保</li>
+            <li>✓ 長期契約でさらにお得</li>
+          </ul>
+          <a href="tel:0339195111" class="btn btn-pricing btn-outline">📞 お電話でご相談</a>
+        </div>
+
+      </div>
+      <p class="pricing-note">※ 料金は税込表示です。キャンセルポリシーについてはお問い合わせください。<br>※ 定期利用の場合は料金要相談となります。</p>
+    </div>
+  </section>
+
+  <!-- 予約フォーム -->
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <h2 class="section-title">ご予約・お問い合わせ</h2>
+      <p class="section-sub">下記フォームよりお気軽にお問い合わせください</p>
+      <div class="reservation-wrap">
+        <form class="reservation-form step-form" id="reservationForm" novalidate>
+          <!-- ステッププログレス -->
+          <div class="step-progress">
+            <div class="step-progress-track">
+              <div class="step-progress-fill" id="stepProgressFill" style="width: 33.33%"></div>
+            </div>
+            <ol class="step-progress-labels">
+              <li class="is-active" data-step-label="1"><span class="step-num">1</span><span class="step-label-text">ご利用内容</span></li>
+              <li data-step-label="2"><span class="step-num">2</span><span class="step-label-text">日時</span></li>
+              <li data-step-label="3"><span class="step-num">3</span><span class="step-label-text">連絡先</span></li>
+            </ol>
+          </div>
+
+          <!-- ステップ1：ご利用内容 -->
+          <fieldset class="step-panel is-active" data-step="1">
+            <legend class="step-heading">どのようなご利用ですか？</legend>
+            <div class="form-group">
+              <label for="usage">ご利用目的 <span class="required">必須</span></label>
+              <select id="usage" name="usage" required>
+                <option value="">選択してください</option>
+                <optgroup label="フィットネス・ウェルネス系">
+                  <option value="yoga">🧘 ヨガ・ピラティス</option>
+                  <option value="taichi">🥋 太極拳・体操</option>
+                  <option value="hotyoga">🔥 ホットヨガ</option>
+                  <option value="stretch">🤸 ストレッチング</option>
+                </optgroup>
+                <optgroup label="ダンス・パフォーマンス系">
+                  <option value="ballet">🩰 ダンス・バレエ</option>
+                  <option value="kids">🌈 キッズダンス</option>
+                  <option value="social">🕺 社交ダンス</option>
+                  <option value="hiphop">🎤 ヒップホップ・ジャズ</option>
+                  <option value="kpop">⭐ K-POP・アイドルダンス</option>
+                </optgroup>
+                <optgroup label="その他の活用">
+                  <option value="seminar">📊 セミナー・研修</option>
+                  <option value="meeting">🤝 会議・ミーティング</option>
+                  <option value="workshop">🎭 ワークショップ・発表会</option>
+                  <option value="personal">💪 パーソナルトレーニング</option>
+                </optgroup>
+                <option value="other">その他</option>
+              </select>
+              <span class="error-msg" id="usageError"></span>
+            </div>
+            <div class="form-group">
+              <label for="duration">ご利用時間 <span class="required">必須</span></label>
+              <select id="duration" name="duration" required>
+                <option value="">選択してください</option>
+                <option value="1">1時間（¥2,500）</option>
+                <option value="2">2時間（¥5,000）</option>
+                <option value="3">3時間（¥7,500）</option>
+                <option value="half">半日パック 4時間（¥8,800）</option>
+                <option value="full">1日パック 8時間（¥16,000）</option>
+                <option value="monthly">定期利用（要相談）</option>
+              </select>
+              <span class="error-msg" id="durationError"></span>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn-primary btn-step-next" data-go="2">次へ <span aria-hidden="true">→</span></button>
+            </div>
+          </fieldset>
+
+          <!-- ステップ2：日時 -->
+          <fieldset class="step-panel" data-step="2" hidden>
+            <legend class="step-heading">いつご利用予定ですか？</legend>
+            <div class="form-group">
+              <label for="date">ご希望日時 <span class="required">必須</span></label>
+              <input type="datetime-local" id="date" name="date" required>
+              <span class="error-msg" id="dateError"></span>
+              <p class="form-hint">※ 第二希望以降がございましたら、下の「ご要望」欄にご記入ください</p>
+            </div>
+            <div class="form-group">
+              <label for="message">ご要望・第二希望日時など <span class="optional">任意</span></label>
+              <textarea id="message" name="message" rows="4" placeholder="例）第二希望：12月15日 14時〜&#10;定期利用のご相談・設備についてのご質問など、お気軽にご記入ください。"></textarea>
+            </div>
+            <div class="step-nav">
+              <button type="button" class="btn btn-back" data-go="1"><span aria-hidden="true">←</span> 戻る</button>
+              <button type="button" class="btn btn-primary btn-step-next" data-go="3">次へ <span aria-hidden="true">→</span></button>
+            </div>
+          </fieldset>
+
+          <!-- ステップ3：連絡先 -->
+          <fieldset class="step-panel" data-step="3" hidden>
+            <legend class="step-heading">ご連絡先を教えてください</legend>
+            <div class="form-group">
+              <label for="name">お名前 <span class="required">必須</span></label>
+              <input type="text" id="name" name="name" placeholder="山田 太郎" autocomplete="name" required>
+              <span class="error-msg" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">電話番号 <span class="required">必須</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="090-0000-0000" autocomplete="tel" inputmode="tel" required>
+              <span class="error-msg" id="phoneError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email">メールアドレス <span class="optional">任意</span></label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" inputmode="email">
+              <span class="error-msg" id="emailError"></span>
+            </div>
+            <div class="step-summary" id="stepSummary"></div>
+            <div class="step-nav">
+              <button type="button" class="btn btn-back" data-go="2"><span aria-hidden="true">←</span> 戻る</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-submit">📩 この内容で送信</button>
+            </div>
+          </fieldset>
+        </form>
+        <div id="formSuccess" class="form-success" hidden>
+          <div class="success-icon">✅</div>
+          <h3>お問い合わせありがとうございます！</h3>
+          <p>内容を確認の上、担当者よりご連絡いたします。<br>お急ぎの方はお電話でお問い合わせください。</p>
+          <a href="tel:0339195111" class="btn btn-primary">📞 03-3919-5111</a>
+        </div>
+      </div>
+
+      <!-- スマホ向けの代替案内（QRから来た人にはQR不要） -->
+      <div class="mobile-qr-note">
+        <span class="mobile-qr-icon">📱</span>
+        <div>
+          <strong>このページのご共有もどうぞ</strong>
+          <p>ご家族・お知り合いに紹介される場合は、ブラウザの共有機能か、店頭の電光板QRをご利用ください。</p>
+        </div>
+      </div>
+
+      <!-- QRコードエリア（PC・タブレット用） -->
+      <div class="qr-section">
+        <div class="qr-box">
+          <h3 class="qr-title">📱 スマホで簡単アクセス</h3>
+          <div id="qrcode" class="qr-canvas"></div>
+          <p class="qr-caption">QRコードを読み取ると<br>このページが開きます</p>
+        </div>
+        <div class="qr-flow">
+          <h3>📱 スマホから予約・確認する流れ</h3>
+          <ol class="flow-list">
+            <li>
+              <span class="flow-num">1</span>
+              <div>
+                <strong>QRコードを読み取る</strong>
+                <p>電光看板のQRコードをスマホカメラで読み取ります</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-num">2</span>
+              <div>
+                <strong>施設内容を確認する</strong>
+                <p>料金・プログラム・アクセスを確認</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-num">3</span>
+              <div>
+                <strong>予約フォームに記入</strong>
+                <p>ご希望の日時・用途を入力して送信</p>
+              </div>
+            </li>
+            <li>
+              <span class="flow-num">4</span>
+              <div>
+                <strong>確認のご連絡</strong>
+                <p>担当者よりご連絡。または直接お電話ください</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- アクセス -->
+  <section class="access-section" id="access">
+    <div class="container">
+      <h2 class="section-title">アクセス</h2>
+      <div class="access-wrap">
+        <div class="access-info">
+          <div class="access-item">
+            <span class="access-icon">🏢</span>
+            <div>
+              <strong>施設名</strong>
+              <p>ウエルネスオクデラビルズ 3F</p>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">📍</span>
+            <div>
+              <strong>住所</strong>
+              <p>東京都北区王子2-26-2</p>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">🚉</span>
+            <div>
+              <strong>交通</strong>
+              <p>JR・東京メトロ南北線「王子」駅より徒歩すぐ</p>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">📞</span>
+            <div>
+              <strong>電話</strong>
+              <a href="tel:0339195111" class="contact-link">03-3919-5111</a>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">📠</span>
+            <div>
+              <strong>FAX</strong>
+              <p>03-3919-5114</p>
+            </div>
+          </div>
+          <div class="access-item">
+            <span class="access-icon">✉️</span>
+            <div>
+              <strong>メール</strong>
+              <a href="mailto:okudera@carrot.ocn.ne.jp" class="contact-link">okudera@carrot.ocn.ne.jp</a>
+            </div>
+          </div>
+        </div>
+        <div class="access-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.4734027369555!2d139.73748981526102!3d35.75280788018144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e84a2a9d5a5%3A0x3a8f7d3d9a6c4bc0!2z5aar5a2Q6Imy!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="オクデラメディカル 貸しスタジオ 地図">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="section-title">よくあるご質問</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q. 予約はどのくらい前から可能ですか？</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-body" hidden>
+            <p>原則として1ヶ月前よりご予約を承っております。定期利用の場合はお電話にてご相談ください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q. キャンセルはできますか？</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-body" hidden>
+            <p>ご予約日の3日前までのキャンセルは無料です。前日・当日のキャンセルはキャンセル料が発生する場合がございます。詳細はお問い合わせください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q. 更衣室・シャワーは別料金ですか？</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-body" hidden>
+            <p>ロッカールームとシャワールームはスタジオ料金に含まれています。追加料金は一切かかりません。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q. 音楽を流すことはできますか？</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-body" hidden>
+            <p>音響設備を完備しております。Bluetooth接続またはAUX接続で音楽を流すことができます。ダンス・ヨガ・有酸素運動などの際もご利用いただけます。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q. 定期利用の割引はありますか？</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-body" hidden>
+            <p>はい、定期利用の場合は割引料金が適用されます。週1回・月4回など、ご利用頻度によって料金が異なりますので、お電話またはフォームよりご相談ください。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span>Q. 最大何人まで利用できますか？</span>
+            <span class="faq-arrow">▼</span>
+          </button>
+          <div class="faq-body" hidden>
+            <p>スタジオ利用の場合は最大20〜30名程度まで対応可能です。セミナー・研修形式では椅子・机のレイアウトにより異なりますので、詳細はお問い合わせください。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2 class="footer-logo">貸しスタジオ</h2>
+          <p class="footer-brand-sub">オクデラメディカル</p>
+          <p class="footer-tagline">多目的スタジオで、あなたの"やりたい"を実現</p>
+        </div>
+        <div class="footer-contact">
+          <h3>お問い合わせ</h3>
+          <p>📍 東京都北区王子2-26-2<br>ウエルネスオクデラビルズ 3F</p>
+          <p>📞 <a href="tel:0339195111">03-3919-5111</a></p>
+          <p>📠 03-3919-5114</p>
+          <p>✉️ <a href="mailto:okudera@carrot.ocn.ne.jp">okudera@carrot.ocn.ne.jp</a></p>
+        </div>
+        <div class="footer-links">
+          <h3>メニュー</h3>
+          <ul>
+            <li><a href="#programs">プログラム一覧</a></li>
+            <li><a href="#facilities">施設案内</a></li>
+            <li><a href="#pricing">料金プラン</a></li>
+            <li><a href="#reservation">予約・お問い合わせ</a></li>
+            <li><a href="#access">アクセス</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 オクデラメディカル 貸しスタジオ. All Rights Reserved.</p>
+        <p class="footer-address">〒114-0022 東京都北区王子2-26-2 ウエルネスオクデラビルズ 3F</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- フローティングCTA -->
+  <div class="floating-cta">
+    <a href="tel:0339195111" class="floating-tel">📞 電話で予約</a>
+    <a href="#reservation" class="floating-form">📋 フォームで予約</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

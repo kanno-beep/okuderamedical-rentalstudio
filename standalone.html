@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>貸しスタジオ | オクデラメディカル ウエルネスオクデラビルズ 3F</title>
+  <meta name="description" content="東京都北区王子の貸しスタジオ。ロッカールーム・シャワー完備。ヨガ・ダンス・セミナーなど多目的に利用できます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <style>
+/* ==========================================================================
+   オクデラメディカル 貸しスタジオ - 埋め込みスタイルシート（スタンドアロン版）
+   ========================================================================== */
+:root {
+  --brand-primary: #2563EB;
+  --brand-secondary: #0EA5E9;
+  --brand-accent: #F59E0B;
+  --brand-light: #EFF6FF;
+  --text-dark: #1a1a2e;
+  --text-body: #2C3E50;
+  --text-muted: #4B5563;
+  --text-white: #FFFFFF;
+  --bg-white: #FFFFFF;
+  --bg-light: #F8FAFC;
+  --bg-pastel: #EFF6FF;
+  --bg-pastel-green: #F0FDF4;
+  --accordion-bg: #FFFFFF;
+  --accordion-border: #E2E8F0;
+  --accordion-hover: #F0F7FF;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 2px 12px rgba(37,99,235,0.10);
+  --card-shadow-hover: 0 8px 24px rgba(37,99,235,0.18);
+  --card-radius: 16px;
+  --section-py: 80px;
+  --container-max: 1100px;
+  --font-serif: 'Noto Serif JP','Yu Mincho','游明朝','YuMincho','ヒラギノ明朝 Pro','Hiragino Mincho Pro',serif;
+  --font-sans: 'Noto Sans JP',sans-serif;
+  --font-base: var(--font-serif);
+  --font-size-base: 16px;
+  --line-height: 1.85;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:var(--font-size-base)}
+body{font-family:var(--font-base);color:var(--text-body);background:var(--bg-white);line-height:var(--line-height);-webkit-text-size-adjust:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--brand-primary);text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{list-style:none}
+button{cursor:pointer;font-family:var(--font-base)}
+.container{max-width:var(--container-max);margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:12px 28px;border-radius:50px;font-size:0.95rem;font-weight:700;text-decoration:none !important;transition:all 0.2s ease;border:2px solid transparent;white-space:nowrap}
+.btn-primary{background:var(--brand-primary);color:var(--text-white) !important;border-color:var(--brand-primary)}
+.btn-primary:hover{background:#1d4ed8;border-color:#1d4ed8;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,0.3)}
+.btn-outline{background:transparent;color:var(--text-white) !important;border-color:var(--text-white)}
+.btn-outline:hover{background:rgba(255,255,255,0.15);transform:translateY(-2px)}
+.btn-pricing{display:block;width:100%;text-align:center;padding:12px;border-radius:10px;background:var(--bg-light);color:var(--brand-primary) !important;border:2px solid var(--brand-primary);font-weight:700;transition:all 0.2s}
+.btn-pricing:hover{background:var(--brand-primary);color:var(--text-white) !important}
+.btn-pricing.btn-primary{background:var(--brand-primary);color:var(--text-white) !important}
+.btn-pricing.btn-outline{color:var(--brand-primary) !important;border-color:var(--brand-primary)}
+.btn-pricing.btn-outline:hover{background:var(--brand-primary);color:var(--text-white) !important}
+.btn-lg{padding:16px 40px;font-size:1.05rem}
+.section-title{font-family:var(--font-serif);font-size:1.9rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:8px;letter-spacing:0.04em}
+.section-sub{font-family:var(--font-serif);font-size:1rem;color:var(--text-muted);text-align:center;margin-bottom:48px;letter-spacing:0.03em}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);border-bottom:1px solid var(--accordion-border);backdrop-filter:blur(8px)}
+.header-inner{max-width:var(--container-max);margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:20px}
+.header-logo{display:flex;align-items:baseline;gap:10px;flex-shrink:0}
+.logo-main{font-family:var(--font-serif);font-size:1.2rem;font-weight:700;color:var(--brand-primary);letter-spacing:0.04em}
+.logo-sub{font-size:0.78rem;color:var(--text-muted);font-weight:500}
+.header-nav{display:flex;align-items:center;gap:4px}
+.header-nav a{padding:6px 12px;font-size:0.88rem;font-weight:600;color:var(--text-body);border-radius:6px;transition:background 0.2s}
+.header-nav a:hover{background:var(--bg-pastel);text-decoration:none;color:var(--brand-primary)}
+.header-nav .nav-tel{background:var(--brand-primary);color:var(--text-white) !important;border-radius:50px;padding:8px 16px;font-weight:700}
+.header-nav .nav-tel:hover{background:#1d4ed8;text-decoration:none}
+.hero{position:relative;width:100%;overflow:hidden;background:var(--bg-pastel);min-height:520px;display:flex;align-items:flex-end}
+.hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;z-index:0}
+.hero-overlay{position:relative;z-index:2;width:100%;padding:32px 20px 36px;background:linear-gradient(to bottom,transparent 0%,rgba(20,40,80,0.55) 30%,rgba(20,40,80,0.78) 100%)}
+.hero-text-box{max-width:var(--container-max);margin:0 auto}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.22);color:var(--text-white);font-family:var(--font-sans);font-size:0.82rem;font-weight:700;padding:4px 16px;border-radius:50px;margin-bottom:12px;border:1px solid rgba(255,255,255,0.45);letter-spacing:0.05em}
+.hero-title{font-family:var(--font-serif);font-size:2.2rem;font-weight:700;color:var(--text-white);line-height:1.45;margin-bottom:10px;letter-spacing:0.02em;text-shadow:0 2px 12px rgba(0,0,0,0.35)}
+.hero-sub{font-family:var(--font-serif);font-size:1rem;color:rgba(255,255,255,0.93);margin-bottom:24px;font-weight:400;letter-spacing:0.03em;text-shadow:0 1px 6px rgba(0,0,0,0.3)}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.features-section{padding:var(--section-py) 0;background:var(--bg-white)}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
+.feature-card{background:var(--bg-pastel);border-radius:var(--card-radius);padding:32px 24px;text-align:center;border:1px solid #DBEAFE;transition:transform 0.2s,box-shadow 0.2s}
+.feature-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.feature-icon{font-size:2.5rem;margin-bottom:14px;display:block}
+.feature-card h3{font-family:var(--font-serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:10px;line-height:1.5;letter-spacing:0.03em}
+.feature-card p{font-family:var(--font-serif);font-size:0.88rem;color:var(--text-muted);line-height:1.7}
+.studio-photo-section{padding:60px 0;background:var(--bg-white)}
+.studio-photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
+.studio-photo-item{border-radius:var(--card-radius);overflow:hidden;background:#f0f4f8;box-shadow:0 4px 20px rgba(37,99,235,0.12);border:1px solid #DBEAFE;transition:transform 0.25s,box-shadow 0.25s}
+.studio-photo-item:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(37,99,235,0.2)}
+.studio-photo-item img{width:100%;height:260px;object-fit:cover;object-position:center 60%;display:block;transition:transform 0.3s}
+.studio-photo-item:hover img{transform:scale(1.03)}
+.photo-caption{padding:12px 18px 16px;font-family:var(--font-serif);font-size:0.88rem;font-weight:500;color:var(--text-body);background:var(--bg-white);letter-spacing:0.03em}
+.programs-section{padding:var(--section-py) 0;background:var(--bg-light)}
+.accordion-item{background:var(--accordion-bg);border:2px solid var(--accordion-border);border-radius:var(--card-radius);margin-bottom:16px;overflow:hidden;transition:border-color 0.2s,box-shadow 0.2s}
+.accordion-item:hover{border-color:var(--brand-secondary)}
+.accordion-item.is-open{border-color:var(--brand-primary);box-shadow:0 4px 20px rgba(37,99,235,0.12)}
+.accordion-trigger{width:100%;padding:20px 24px;background:none;border:none;display:flex;align-items:center;gap:14px;text-align:left;transition:background 0.2s}
+.accordion-trigger:hover{background:var(--accordion-hover)}
+.accordion-icon{font-size:1.6rem;flex-shrink:0}
+.accordion-label{font-family:var(--font-serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);flex:1;letter-spacing:0.04em}
+.accordion-sub{font-family:var(--font-sans);font-size:0.82rem;color:var(--text-muted);flex:1;font-weight:500}
+.accordion-arrow{color:var(--brand-primary);font-size:0.85rem;font-weight:700;transition:transform 0.3s ease;flex-shrink:0}
+.accordion-item.is-open .accordion-arrow{transform:rotate(180deg)}
+.accordion-body{padding:0 24px 28px;border-top:1px solid var(--accordion-border);padding-top:24px}
+.program-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+.program-card{background:var(--card-bg);border-radius:12px;overflow:hidden;border:1px solid var(--accordion-border);box-shadow:var(--card-shadow);transition:transform 0.2s,box-shadow 0.2s}
+.program-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+.program-card-img-wrap{width:100%;height:200px;overflow:hidden;background:#EFF6FF;position:relative}
+.program-card-img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.3s ease}
+.program-card:hover .program-card-img{transform:scale(1.05)}
+.program-card-body{padding:18px}
+.program-name{font-family:var(--font-serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:8px;line-height:1.4;letter-spacing:0.03em}
+.program-desc{font-family:var(--font-serif);font-size:0.85rem;color:var(--text-muted);line-height:1.7;margin-bottom:12px}
+.program-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{display:inline-block;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:50px;background:var(--bg-pastel);color:var(--brand-primary);border:1px solid #BFDBFE}
+.pricing-section{padding:var(--section-py) 0;background:var(--bg-white)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;align-items:start}
+.pricing-card{background:var(--card-bg);border:2px solid var(--accordion-border);border-radius:var(--card-radius);padding:28px 24px;position:relative;transition:border-color 0.2s,box-shadow 0.2s}
+.pricing-card:hover{border-color:var(--brand-secondary);box-shadow:var(--card-shadow-hover)}
+.pricing-popular{border-color:var(--brand-primary);box-shadow:0 4px 24px rgba(37,99,235,0.15)}
+.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--brand-accent);color:#1a1a1a;font-size:0.78rem;font-weight:800;padding:4px 18px;border-radius:50px;white-space:nowrap}
+.pricing-monthly{background:var(--bg-pastel-green);border-color:#86EFAC}
+.pricing-header{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.pricing-icon{font-size:1.6rem}
+.pricing-name{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;color:var(--text-dark);letter-spacing:0.03em}
+.pricing-price{margin-bottom:6px}
+.price-main{font-family:var(--font-sans);font-size:2rem;font-weight:900;color:var(--brand-primary)}
+.price-unit{font-size:0.9rem;color:var(--text-muted);font-weight:500;margin-left:4px}
+.price-per-hour{font-size:0.8rem;color:var(--brand-secondary);font-weight:600;margin-bottom:16px}
+.pricing-features{margin-bottom:20px}
+.pricing-features li{font-family:var(--font-serif);font-size:0.87rem;color:var(--text-body);padding:5px 0;border-bottom:1px solid #F1F5F9;line-height:1.65}
+.pricing-note{text-align:center;font-size:0.82rem;color:var(--text-muted);margin-top:28px;line-height:1.6;background:var(--bg-light);padding:16px;border-radius:10px}
+.reservation-section{padding:var(--section-py) 0;background:var(--bg-pastel)}
+.reservation-wrap{max-width:720px;margin:0 auto 60px}
+.reservation-form{background:var(--bg-white);border-radius:var(--card-radius);padding:40px;box-shadow:var(--card-shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{margin-bottom:20px}
+.form-group label{display:block;font-size:0.9rem;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+.required{display:inline-block;font-size:0.7rem;background:#FEE2E2;color:#DC2626;padding:1px 7px;border-radius:4px;font-weight:700;margin-left:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;font-size:0.95rem;font-family:var(--font-base);color:var(--text-dark);background:var(--bg-light);border:2px solid var(--accordion-border);border-radius:8px;outline:none;transition:border-color 0.2s,box-shadow 0.2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--brand-primary);box-shadow:0 0 0 3px rgba(37,99,235,0.12);background:var(--bg-white)}
+.form-group textarea{resize:vertical;min-height:110px}
+.error-msg{display:block;font-size:0.78rem;color:#DC2626;margin-top:4px;font-weight:600}
+.form-success{background:var(--bg-white);border-radius:var(--card-radius);padding:56px 40px;text-align:center;box-shadow:var(--card-shadow)}
+.success-icon{font-size:3.5rem;margin-bottom:16px}
+.form-success h3{font-size:1.4rem;color:var(--text-dark);font-weight:900;margin-bottom:12px}
+.form-success p{color:var(--text-muted);margin-bottom:24px;line-height:1.7}
+.qr-section{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:start;background:var(--bg-white);border-radius:var(--card-radius);padding:40px;box-shadow:var(--card-shadow);max-width:720px;margin:0 auto}
+.qr-box{text-align:center;flex-shrink:0}
+.qr-title{font-size:0.9rem;font-weight:700;color:var(--text-dark);margin-bottom:12px}
+.qr-canvas{background:white;padding:10px;border-radius:10px;border:2px solid var(--accordion-border);display:inline-block;width:140px;height:140px}
+.qr-canvas canvas,.qr-canvas img{display:block;margin:0 auto}
+.qr-caption{font-size:0.78rem;color:var(--text-muted);margin-top:8px;line-height:1.5}
+.qr-flow h3{font-size:1.05rem;font-weight:800;color:var(--text-dark);margin-bottom:20px}
+.flow-list{display:flex;flex-direction:column;gap:16px}
+.flow-list li{display:flex;align-items:flex-start;gap:14px}
+.flow-num{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--brand-primary);color:var(--text-white);font-weight:900;font-size:0.9rem;flex-shrink:0}
+.flow-list li strong{display:block;font-weight:800;color:var(--text-dark);font-size:0.95rem;margin-bottom:3px}
+.flow-list li p{font-size:0.83rem;color:var(--text-muted)}
+.access-section{padding:var(--section-py) 0;background:var(--bg-white)}
+.access-wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.access-info{display:flex;flex-direction:column;gap:16px}
+.access-item{display:flex;align-items:flex-start;gap:14px;padding:14px 16px;background:var(--bg-light);border-radius:10px}
+.access-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px}
+.access-item strong{display:block;font-weight:700;font-size:0.82rem;color:var(--text-muted);margin-bottom:2px}
+.access-item p,.access-item a{font-size:0.95rem;color:var(--text-dark);font-weight:500}
+.contact-link{font-weight:700;color:var(--brand-primary)}
+.access-map{border-radius:var(--card-radius);overflow:hidden;box-shadow:var(--card-shadow)}
+.access-map iframe{display:block;border-radius:var(--card-radius)}
+.faq-section{padding:var(--section-py) 0;background:var(--bg-light)}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{background:var(--bg-white);border-radius:12px;margin-bottom:12px;overflow:hidden;border:1px solid var(--accordion-border)}
+.faq-trigger{width:100%;padding:18px 20px;background:none;border:none;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;font-family:var(--font-serif);font-size:0.95rem;font-weight:700;color:var(--text-dark);letter-spacing:0.02em;transition:background 0.2s}
+.faq-trigger:hover{background:var(--accordion-hover)}
+.faq-arrow{color:var(--brand-primary);font-size:0.8rem;transition:transform 0.3s;flex-shrink:0}
+.faq-item.is-open .faq-arrow{transform:rotate(180deg)}
+.faq-body{padding:16px 20px 20px;border-top:1px solid var(--accordion-border)}
+.faq-body p{font-family:var(--font-serif);font-size:0.9rem;color:var(--text-body);line-height:1.8}
+.site-footer{background:#1a1a2e;color:rgba(255,255,255,0.85);padding:60px 0 0}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-logo{font-size:1.4rem;font-weight:900;color:var(--text-white);margin-bottom:4px}
+.footer-brand-sub{font-size:0.85rem;color:rgba(255,255,255,0.6);margin-bottom:10px}
+.footer-tagline{font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.6}
+.footer-contact h3,.footer-links h3{font-size:0.9rem;font-weight:700;color:var(--text-white);margin-bottom:14px}
+.footer-contact p{font-size:0.85rem;line-height:1.8;color:rgba(255,255,255,0.75)}
+.footer-contact a{color:#93C5FD;font-weight:600}
+.footer-links ul{display:flex;flex-direction:column;gap:8px}
+.footer-links a{font-size:0.85rem;color:rgba(255,255,255,0.7);transition:color 0.2s}
+.footer-links a:hover{color:#93C5FD;text-decoration:none}
+.footer-bottom{padding:20px 0;text-align:center}
+.footer-bottom p{font-size:0.78rem;color:rgba(255,255,255,0.45);line-height:1.7}
+.floating-cta{position:fixed;bottom:20px;left:0;right:0;z-index:200;display:flex;justify-content:center;gap:12px;pointer-events:none}
+.floating-cta a{pointer-events:auto;display:inline-flex;align-items:center;gap:6px;padding:14px 22px;border-radius:50px;font-size:0.9rem;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,0.25);transition:transform 0.2s,box-shadow 0.2s}
+.floating-cta a:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.3);text-decoration:none}
+.floating-tel{background:var(--brand-accent);color:#1a1a1a !important}
+.floating-form{background:var(--brand-primary);color:var(--text-white) !important}
+@media(max-width:900px){
+  .header-nav a:not(.nav-tel){display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .access-wrap{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .qr-section{grid-template-columns:1fr;text-align:center}
+  .qr-box{margin:0 auto}
+}
+@media(max-width:640px){
+  :root{--section-py:56px}
+  .hero{min-height:380px}
+  .hero-title{font-size:1.55rem}
+  .section-title{font-size:1.5rem}
+  .features-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .feature-card{padding:20px 14px}
+  .feature-icon{font-size:1.8rem}
+  .program-grid{grid-template-columns:1fr}
+  .pricing-grid{grid-template-columns:1fr}
+  .accordion-sub{display:none}
+  .accordion-trigger{padding:16px;gap:10px}
+  .accordion-body{padding:0 14px 20px;padding-top:16px}
+  .reservation-form{padding:24px 16px}
+  .footer-top{grid-template-columns:1fr;gap:28px}
+  .footer-brand{grid-column:auto}
+  .hero-btns{flex-direction:column;gap:10px}
+  .hero-btns .btn{width:100%;justify-content:center}
+  .floating-cta{flex-direction:column;align-items:center;bottom:12px;gap:8px}
+  .floating-cta a{padding:12px 28px;font-size:0.88rem}
+}
+*:focus-visible{outline:3px solid var(--brand-primary);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;transition-duration:0.01ms !important}}
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-logo">
+        <span class="logo-main">貸しスタジオ</span>
+        <span class="logo-sub">オクデラメディカル</span>
+      </div>
+      <nav class="header-nav">
+        <a href="#programs">プログラム</a>
+        <a href="#facilities">施設案内</a>
+        <a href="#pricing">料金</a>
+        <a href="#reservation">予約</a>
+        <a href="tel:0339195111" class="nav-tel">📞 03-3919-5111</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="hero">
+    <img src="https://www.genspark.ai/api/files/s/jrvyyvXV?cache_control=3600" alt="明るく開放的な貸しスタジオ内観" class="hero-bg-img" onerror="this.style.opacity='0';">
+    <div class="hero-overlay">
+      <div class="hero-text-box">
+        <p class="hero-badge">王子駅すぐ ✦ 3F</p>
+        <h1 class="hero-title">多目的スタジオで<br>あなたの&#8220;やりたい&#8221;を実現</h1>
+        <p class="hero-sub">ロッカールーム・シャワー完備 ／ 研修・ヨガ・ダンスなど多目的に</p>
+        <div class="hero-btns">
+          <a href="#reservation" class="btn btn-primary">📋 予約・お問い合わせ</a>
+          <a href="tel:0339195111" class="btn btn-outline">📞 03-3919-5111</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="facilities">
+    <div class="container">
+      <h2 class="section-title">施設の特徴</h2>
+      <p class="section-sub">快適なスタジオ環境をご用意しています</p>
+      <div class="features-grid">
+        <div class="feature-card"><div class="feature-icon">🚿</div><h3>ロッカールーム<br>シャワー完備</h3><p>清潔で広々としたロッカールームとシャワールームを完備。快適にご利用いただけます。</p></div>
+        <div class="feature-card"><div class="feature-icon">🔊</div><h3>音響設備<br>プロジェクター</h3><p>高品質な音響システムとプロジェクターを完備。ダンスレッスンからセミナーまで対応。</p></div>
+        <div class="feature-card"><div class="feature-icon">📶</div><h3>Wi-Fi<br>完備</h3><p>高速Wi-Fiを完備。オンライン配信や資料共有も快適に行えます。</p></div>
+        <div class="feature-card"><div class="feature-icon">🪞</div><h3>鏡張り<br>スタジオ</h3><p>壁一面の大型ミラー完備。ダンス・ヨガ・体操など様々な動きを確認しながら練習できます。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="studio-photo-section">
+    <div class="container">
+      <div class="studio-photos">
+        <div class="studio-photo-item">
+          <img src="https://www.genspark.ai/api/files/s/9IUYfl14?cache_control=3600" alt="スタジオ内観イラスト" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <p class="photo-caption">多目的スタジオ（鏡張り・バレエバー付き）</p>
+        </div>
+        <div class="studio-photo-item">
+          <img src="https://www.genspark.ai/api/files/s/yzrwKFlR?cache_control=3600" alt="セミナールームイラスト" loading="lazy" onerror="this.parentElement.style.display='none'">
+          <p class="photo-caption">研修・セミナールーム（プロジェクター完備）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="programs-section" id="programs">
+    <div class="container">
+      <h2 class="section-title">スタジオ活用プログラム</h2>
+      <p class="section-sub">様々な用途にご利用いただけます</p>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-icon">💪</span>
+          <span class="accordion-label">フィットネス・ウェルネス系</span>
+          <span class="accordion-sub">ヨガ / ピラティス / 太極拳 / ストレッチ など</span>
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body" hidden>
+          <div class="program-grid">
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/Hr4q6bZi?cache_control=3600" alt="ヨガ・ピラティス" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🧘 ヨガ・ピラティス</h3><p class="program-desc">ヨガマット完備。初心者から上級者まで対応できる広々とした空間です。鏡張りで動きを確認しながら練習できます。</p><div class="program-tags"><span class="tag">全年齢対応</span><span class="tag">初心者歓迎</span><span class="tag">グループOK</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/uOJn9BIX?cache_control=3600" alt="太極拳・体操" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🥋 太極拳・体操</h3><p class="program-desc">ゆったりとした動きで心身をリフレッシュ。シニアの方にも安心してご利用いただける穏やかな空間です。</p><div class="program-tags"><span class="tag">シニア歓迎</span><span class="tag">健康増進</span><span class="tag">少人数OK</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/MCB47Qnr?cache_control=3600" alt="ホットヨガ" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🔥 ホットヨガ</h3><p class="program-desc">温度設定相談可能。深いストレッチと発汗で心身のデトックス。シャワールームが完備されているので安心です。</p><div class="program-tags"><span class="tag">シャワー完備</span><span class="tag">温度相談可</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/oxl24B9m?cache_control=3600" alt="ストレッチング" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🤸 ストレッチング</h3><p class="program-desc">全身の柔軟性を高めるストレッチ。木目フロアと鏡張りの環境で、丁寧な動きを確認しながら行えます。</p><div class="program-tags"><span class="tag">柔軟性UP</span><span class="tag">全年齢対応</span></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-icon">💃</span>
+          <span class="accordion-label">ダンス・パフォーマンス系</span>
+          <span class="accordion-sub">バレエ / キッズダンス / 社交ダンス / ヒップホップ など</span>
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body" hidden>
+          <div class="program-grid">
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/ylLnr5it?cache_control=3600" alt="ダンス・バレエ" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🩰 ダンス・バレエ</h3><p class="program-desc">バレエバー完備の鏡張りスタジオ。クラシックバレエから現代ダンスまで幅広くご利用いただけます。</p><div class="program-tags"><span class="tag">バレエバー完備</span><span class="tag">鏡張り</span><span class="tag">音響完備</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/Qxb9Ilhz?cache_control=3600" alt="キッズダンス" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🌈 キッズダンス</h3><p class="program-desc">お子様が安心して楽しめる広々とした空間。木目の床は安全で、大きな鏡で自分のダンスを確認できます。</p><div class="program-tags"><span class="tag">子ども歓迎</span><span class="tag">安全な床</span><span class="tag">明るい空間</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/OtRHhA0f?cache_control=3600" alt="社交ダンス" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🕺 社交ダンス</h3><p class="program-desc">優雅に踊れる広いフロア。ワルツ・タンゴなど各種社交ダンスに対応。音響設備完備で本格的な練習が可能です。</p><div class="program-tags"><span class="tag">広々フロア</span><span class="tag">カップル歓迎</span><span class="tag">音響完備</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/JNC3Tr40?cache_control=3600" alt="ヒップホップ・ジャズ" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🎤 ヒップホップ・ジャズ</h3><p class="program-desc">大音量でも安心な防音対応。ヒップホップ、ジャズダンス、K-POPなど様々なジャンルのダンス練習に最適です。</p><div class="program-tags"><span class="tag">全ジャンル対応</span><span class="tag">音響完備</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/OKFZawIF?cache_control=3600" alt="K-POP・アイドルダンス" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">⭐ K-POP・アイドルダンス</h3><p class="program-desc">大型ミラーでフォーメーションを確認しながら練習。グループでの振付練習に最適な広さを確保しています。</p><div class="program-tags"><span class="tag">グループOK</span><span class="tag">大型ミラー</span></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-trigger" aria-expanded="false">
+          <span class="accordion-icon">📋</span>
+          <span class="accordion-label">その他の活用</span>
+          <span class="accordion-sub">セミナー / 研修 / 会議 / 発表会 / ワークショップ など</span>
+          <span class="accordion-arrow">▼</span>
+        </button>
+        <div class="accordion-body" hidden>
+          <div class="program-grid">
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/EuNukWAn?cache_control=3600" alt="セミナー・研修" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">📊 セミナー・研修</h3><p class="program-desc">プロジェクター・スクリーン完備。企業研修・セミナー・勉強会など多目的にご利用いただけます。Wi-Fi完備。</p><div class="program-tags"><span class="tag">プロジェクター完備</span><span class="tag">Wi-Fi完備</span><span class="tag">最大30名</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/QTZ397C6?cache_control=3600" alt="会議・ミーティング" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🤝 会議・ミーティング</h3><p class="program-desc">静かで集中できる環境。少人数の会議からグループディスカッションまで対応。ホワイトボード使用可能。</p><div class="program-tags"><span class="tag">静かな環境</span><span class="tag">ホワイトボード可</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/8FfebNCt?cache_control=3600" alt="ワークショップ・発表会" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">🎭 ワークショップ・発表会</h3><p class="program-desc">発表・演技・プレゼンなど多様な用途に対応。音響・照明設備を活用した本格的なパフォーマンスが可能です。</p><div class="program-tags"><span class="tag">音響完備</span><span class="tag">多目的対応</span></div></div></div>
+            <div class="program-card"><div class="program-card-img-wrap"><img src="https://www.genspark.ai/api/files/s/RKPvjs2C?cache_control=3600" alt="パーソナルトレーニング" class="program-card-img" loading="lazy"></div><div class="program-card-body"><h3 class="program-name">💪 パーソナルトレーニング</h3><p class="program-desc">トレーナーと1対1のプライベートセッション。鏡張りのスタジオでフォームを確認しながら効率的なトレーニングが可能です。</p><div class="program-tags"><span class="tag">プライベート</span><span class="tag">鏡張り</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <h2 class="section-title">料金プラン</h2>
+      <p class="section-sub">お気軽にご利用いただける料金設定</p>
+      <div class="pricing-grid">
+        <div class="pricing-card"><div class="pricing-header"><span class="pricing-icon">⏰</span><h3 class="pricing-name">時間利用</h3></div><div class="pricing-price"><span class="price-main">¥2,500</span><span class="price-unit">/ 1時間</span></div><ul class="pricing-features"><li>✓ 1時間単位でのご利用</li><li>✓ 最低利用時間：1時間</li><li>✓ 施設使用料込み</li><li>✓ 音響設備・鏡利用可</li></ul><a href="#reservation" class="btn btn-pricing">この料金で予約</a></div>
+        <div class="pricing-card pricing-popular"><div class="popular-badge">🌟 人気No.1</div><div class="pricing-header"><span class="pricing-icon">🌅</span><h3 class="pricing-name">半日パック</h3></div><div class="pricing-price"><span class="price-main">¥8,800</span><span class="price-unit">/ 4時間</span></div><div class="price-per-hour">(1時間あたり¥2,200)</div><ul class="pricing-features"><li>✓ 4時間の連続利用</li><li>✓ 午前 or 午後の利用</li><li>✓ 施設設備フル利用可</li><li>✓ 時間利用より10%お得</li></ul><a href="#reservation" class="btn btn-pricing btn-primary">この料金で予約</a></div>
+        <div class="pricing-card"><div class="pricing-header"><span class="pricing-icon">🌞</span><h3 class="pricing-name">1日パック</h3></div><div class="pricing-price"><span class="price-main">¥16,000</span><span class="price-unit">/ 8時間</span></div><div class="price-per-hour">(1時間あたり¥2,000)</div><ul class="pricing-features"><li>✓ 8時間の連続利用</li><li>✓ 一日中ご利用可能</li><li>✓ 施設設備フル利用可</li><li>✓ 時間利用より20%お得</li></ul><a href="#reservation" class="btn btn-pricing">この料金で予約</a></div>
+        <div class="pricing-card pricing-monthly"><div class="pricing-header"><span class="pricing-icon">📅</span><h3 class="pricing-name">定期利用</h3></div><div class="pricing-price"><span class="price-main">要相談</span></div><ul class="pricing-features"><li>✓ 週1回・月4回など定期利用</li><li>✓ 継続利用割引適用</li><li>✓ 優先予約枠確保</li><li>✓ 長期契約でさらにお得</li></ul><a href="tel:0339195111" class="btn btn-pricing btn-outline">📞 お電話でご相談</a></div>
+      </div>
+      <p class="pricing-note">※ 料金は税込表示です。キャンセルポリシーについてはお問い合わせください。<br>※ 定期利用の場合は料金要相談となります。</p>
+    </div>
+  </section>
+
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <h2 class="section-title">ご予約・お問い合わせ</h2>
+      <p class="section-sub">下記フォームよりお気軽にお問い合わせください</p>
+      <div class="reservation-wrap">
+        <form class="reservation-form" id="reservationForm" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="name">お名前 <span class="required">必須</span></label><input type="text" id="name" name="name" placeholder="山田 太郎" required><span class="error-msg" id="nameError"></span></div>
+            <div class="form-group"><label for="phone">電話番号 <span class="required">必須</span></label><input type="tel" id="phone" name="phone" placeholder="03-0000-0000" required><span class="error-msg" id="phoneError"></span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="email">メールアドレス</label><input type="email" id="email" name="email" placeholder="example@email.com"><span class="error-msg" id="emailError"></span></div>
+            <div class="form-group"><label for="date">ご希望日時 <span class="required">必須</span></label><input type="datetime-local" id="date" name="date" required><span class="error-msg" id="dateError"></span></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="usage">ご利用目的</label><select id="usage" name="usage"><option value="">選択してください</option><optgroup label="フィットネス・ウェルネス系"><option value="yoga">ヨガ・ピラティス</option><option value="taichi">太極拳・体操</option><option value="hotyoga">ホットヨガ</option><option value="stretch">ストレッチング</option></optgroup><optgroup label="ダンス・パフォーマンス系"><option value="ballet">ダンス・バレエ</option><option value="kids">キッズダンス</option><option value="social">社交ダンス</option><option value="hiphop">ヒップホップ・ジャズ</option><option value="kpop">K-POP・アイドルダンス</option></optgroup><optgroup label="その他の活用"><option value="seminar">セミナー・研修</option><option value="meeting">会議・ミーティング</option><option value="workshop">ワークショップ・発表会</option><option value="personal">パーソナルトレーニング</option></optgroup><option value="other">その他</option></select></div>
+            <div class="form-group"><label for="duration">ご利用時間</label><select id="duration" name="duration"><option value="">選択してください</option><option value="1">1時間</option><option value="2">2時間</option><option value="3">3時間</option><option value="half">半日パック（4時間）</option><option value="full">1日パック（8時間）</option><option value="monthly">定期利用（要相談）</option></select></div>
+          </div>
+          <div class="form-group"><label for="message">ご要望・ご質問</label><textarea id="message" name="message" rows="4" placeholder="定期利用のご相談・設備についてのご質問など、お気軽にご記入ください。"></textarea></div>
+          <button type="submit" class="btn btn-primary btn-lg">送信する</button>
+        </form>
+        <div id="formSuccess" class="form-success" hidden>
+          <div class="success-icon">✅</div>
+          <h3>お問い合わせありがとうございます！</h3>
+          <p>内容を確認の上、担当者よりご連絡いたします。<br>お急ぎの方はお電話でお問い合わせください。</p>
+          <a href="tel:0339195111" class="btn btn-primary">📞 03-3919-5111</a>
+        </div>
+      </div>
+      <div class="qr-section">
+        <div class="qr-box">
+          <h3 class="qr-title">📱 スマホで簡単アクセス</h3>
+          <div id="qrcode" class="qr-canvas"></div>
+          <p class="qr-caption">QRコードを読み取ると<br>このページが開きます</p>
+        </div>
+        <div class="qr-flow">
+          <h3>📱 スマホから予約・確認する流れ</h3>
+          <ol class="flow-list">
+            <li><span class="flow-num">1</span><div><strong>QRコードを読み取る</strong><p>電光看板のQRコードをスマホカメラで読み取ります</p></div></li>
+            <li><span class="flow-num">2</span><div><strong>施設内容を確認する</strong><p>料金・プログラム・アクセスを確認</p></div></li>
+            <li><span class="flow-num">3</span><div><strong>予約フォームに記入</strong><p>ご希望の日時・用途を入力して送信</p></div></li>
+            <li><span class="flow-num">4</span><div><strong>確認のご連絡</strong><p>担当者よりご連絡。または直接お電話ください</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="access-section" id="access">
+    <div class="container">
+      <h2 class="section-title">アクセス</h2>
+      <div class="access-wrap">
+        <div class="access-info">
+          <div class="access-item"><span class="access-icon">🏢</span><div><strong>施設名</strong><p>ウエルネスオクデラビルズ 3F</p></div></div>
+          <div class="access-item"><span class="access-icon">📍</span><div><strong>住所</strong><p>東京都北区王子2-26-2</p></div></div>
+          <div class="access-item"><span class="access-icon">🚉</span><div><strong>交通</strong><p>JR・東京メトロ南北線「王子」駅より徒歩すぐ</p></div></div>
+          <div class="access-item"><span class="access-icon">📞</span><div><strong>電話</strong><a href="tel:0339195111" class="contact-link">03-3919-5111</a></div></div>
+          <div class="access-item"><span class="access-icon">📠</span><div><strong>FAX</strong><p>03-3919-5114</p></div></div>
+          <div class="access-item"><span class="access-icon">✉️</span><div><strong>メール</strong><a href="mailto:okudera@carrot.ocn.ne.jp" class="contact-link">okudera@carrot.ocn.ne.jp</a></div></div>
+        </div>
+        <div class="access-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.4734027369555!2d139.73748981526102!3d35.75280788018144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188e84a2a9d5a5%3A0x3a8f7d3d9a6c4bc0!2z5aar5a2Q6Imy!5e0!3m2!1sja!2sjp!4v1620000000000!5m2!1sja!2sjp" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="地図"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2 class="section-title">よくあるご質問</h2>
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-trigger"><span>Q. 予約はどのくらい前から可能ですか？</span><span class="faq-arrow">▼</span></button><div class="faq-body" hidden><p>原則として1ヶ月前よりご予約を承っております。定期利用の場合はお電話にてご相談ください。</p></div></div>
+        <div class="faq-item"><button class="faq-trigger"><span>Q. キャンセルはできますか？</span><span class="faq-arrow">▼</span></button><div class="faq-body" hidden><p>ご予約日の3日前までのキャンセルは無料です。前日・当日のキャンセルはキャンセル料が発生する場合がございます。詳細はお問い合わせください。</p></div></div>
+        <div class="faq-item"><button class="faq-trigger"><span>Q. 更衣室・シャワーは別料金ですか？</span><span class="faq-arrow">▼</span></button><div class="faq-body" hidden><p>ロッカールームとシャワールームはスタジオ料金に含まれています。追加料金は一切かかりません。</p></div></div>
+        <div class="faq-item"><button class="faq-trigger"><span>Q. 音楽を流すことはできますか？</span><span class="faq-arrow">▼</span></button><div class="faq-body" hidden><p>音響設備を完備しております。Bluetooth接続またはAUX接続で音楽を流すことができます。</p></div></div>
+        <div class="faq-item"><button class="faq-trigger"><span>Q. 定期利用の割引はありますか？</span><span class="faq-arrow">▼</span></button><div class="faq-body" hidden><p>はい、定期利用の場合は割引料金が適用されます。週1回・月4回など、ご利用頻度によって料金が異なりますので、お電話またはフォームよりご相談ください。</p></div></div>
+        <div class="faq-item"><button class="faq-trigger"><span>Q. 最大何人まで利用できますか？</span><span class="faq-arrow">▼</span></button><div class="faq-body" hidden><p>スタジオ利用の場合は最大20〜30名程度まで対応可能です。セミナー・研修形式では椅子・机のレイアウトにより異なりますので、詳細はお問い合わせください。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2 class="footer-logo">貸しスタジオ</h2>
+          <p class="footer-brand-sub">オクデラメディカル</p>
+          <p class="footer-tagline">多目的スタジオで、あなたの"やりたい"を実現</p>
+        </div>
+        <div class="footer-contact">
+          <h3>お問い合わせ</h3>
+          <p>📍 東京都北区王子2-26-2<br>ウエルネスオクデラビルズ 3F</p>
+          <p>📞 <a href="tel:0339195111">03-3919-5111</a></p>
+          <p>📠 03-3919-5114</p>
+          <p>✉️ <a href="mailto:okudera@carrot.ocn.ne.jp">okudera@carrot.ocn.ne.jp</a></p>
+        </div>
+        <div class="footer-links">
+          <h3>メニュー</h3>
+          <ul>
+            <li><a href="#programs">プログラム一覧</a></li>
+            <li><a href="#facilities">施設案内</a></li>
+            <li><a href="#pricing">料金プラン</a></li>
+            <li><a href="#reservation">予約・お問い合わせ</a></li>
+            <li><a href="#access">アクセス</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 オクデラメディカル 貸しスタジオ. All Rights Reserved.</p>
+        <p class="footer-address">〒114-0022 東京都北区王子2-26-2 ウエルネスオクデラビルズ 3F</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-cta">
+    <a href="tel:0339195111" class="floating-tel">📞 電話で予約</a>
+    <a href="#reservation" class="floating-form">📋 フォームで予約</a>
+  </div>
+
+  <script>
+'use strict';
+function initAccordions(){const t=document.querySelectorAll('.accordion-trigger');t.forEach(t=>{t.addEventListener('click',function(){const e=this.closest('.accordion-item'),o=e.querySelector('.accordion-body'),i=e.classList.contains('is-open');if(i){e.classList.remove('is-open');this.setAttribute('aria-expanded','false');o.hidden=true}else{e.classList.add('is-open');this.setAttribute('aria-expanded','true');o.hidden=false}})});const f=document.querySelectorAll('.faq-trigger');f.forEach(t=>{t.addEventListener('click',function(){const e=this.closest('.faq-item'),o=e.querySelector('.faq-body'),i=e.classList.contains('is-open');document.querySelectorAll('.faq-item.is-open').forEach(x=>{if(x!==e){x.classList.remove('is-open');x.querySelector('.faq-trigger').setAttribute('aria-expanded','false');x.querySelector('.faq-body').hidden=true}});if(i){e.classList.remove('is-open');this.setAttribute('aria-expanded','false');o.hidden=true}else{e.classList.add('is-open');this.setAttribute('aria-expanded','true');o.hidden=false}})})}
+function initQRCode(){const c=document.getElementById('qrcode');if(!c)return;const u=window.location.href.split('?')[0];if(typeof QRCode==='undefined'){c.innerHTML='<p style="font-size:0.75rem;color:#6B7280;text-align:center;padding:20px;">QRコードは<br>公開後に表示されます</p>';return}try{new QRCode(c,{text:u,width:120,height:120,colorDark:'#1a1a2e',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M})}catch(e){c.innerHTML='<p style="font-size:0.75rem;color:#6B7280;text-align:center;padding:10px;">QRコード生成エラー</p>'}}
+function initReservationForm(){const f=document.getElementById('reservationForm'),s=document.getElementById('formSuccess');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();clearErrors();let v=true;const n=document.getElementById('name');if(!n.value.trim()){showError('nameError','お名前を入力してください');v=false}const p=document.getElementById('phone');if(!p.value.trim()){showError('phoneError','電話番号を入力してください');v=false}else if(!/^[\d\-\+\(\)\s]{7,15}$/.test(p.value.trim())){showError('phoneError','正しい電話番号を入力してください');v=false}const em=document.getElementById('email');if(em.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim())){showError('emailError','正しいメールアドレスを入力してください');v=false}const d=document.getElementById('date');if(!d.value){showError('dateError','ご希望日時を選択してください');v=false}else if(new Date(d.value)<=new Date()){showError('dateError','未来の日時を選択してください');v=false}if(!v)return;const b=f.querySelector('button[type="submit"]');b.disabled=true;b.textContent='送信中...';setTimeout(()=>{f.hidden=true;s.hidden=false;s.scrollIntoView({behavior:'smooth',block:'center'})},1000)})}
+function showError(id,msg){const el=document.getElementById(id);if(el)el.textContent=msg;const inp=document.getElementById(id.replace('Error',''));if(inp)inp.style.borderColor='#DC2626'}
+function clearErrors(){document.querySelectorAll('.error-msg').forEach(e=>e.textContent='');document.querySelectorAll('.form-group input,.form-group select,.form-group textarea').forEach(i=>i.style.borderColor='')}
+function initSmoothScroll(){document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(!t)return;e.preventDefault();const h=document.querySelector('.site-header')?.offsetHeight||64;window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-h-16,behavior:'smooth'})})})}
+function initFloatingCTA(){const c=document.querySelector('.floating-cta');if(!c)return;c.style.opacity='0';c.style.transform='translateY(10px)';c.style.transition='opacity 0.3s,transform 0.3s';let shown=false;function check(){if(!shown&&window.scrollY>300){c.style.opacity='1';c.style.transform='translateY(0)';shown=true}const f=document.querySelector('.site-footer');if(f){const ft=f.getBoundingClientRect().top;if(ft<window.innerHeight){c.style.opacity='0';c.style.pointerEvents='none'}else if(shown){c.style.opacity='1';c.style.pointerEvents='auto'}}}window.addEventListener('scroll',check,{passive:true});check()}
+document.addEventListener('DOMContentLoaded',function(){initAccordions();initQRCode();initReservationForm();initSmoothScroll();initFloatingCTA();const a=document.querySelector('.accordion-item');if(a){const t=a.querySelector('.accordion-trigger'),b=a.querySelector('.accordion-body');if(t&&b){a.classList.add('is-open');t.setAttribute('aria-expanded','true');b.hidden=false}}});
+  </script>
+</body>
+</html>

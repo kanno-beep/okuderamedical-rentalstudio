@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>素材ダウンロード | オクデラメディカル 貸しスタジオ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #F8FAFC; color: #2C3E50; line-height: 1.7; }
+    a { color: #2563EB; }
+
+    .page-header {
+      background: #1a1a2e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .page-header p { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    .section {
+      padding: 48px 0 0;
+    }
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      border-left: 4px solid #2563EB;
+      padding-left: 14px;
+      margin-bottom: 24px;
+    }
+
+    /* ウェブページダウンロード */
+    .dl-webpage {
+      background: white;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(37,99,235,0.10);
+      border: 1px solid #E2E8F0;
+      margin-bottom: 24px;
+    }
+    .dl-webpage h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+    }
+    .dl-webpage p {
+      font-size: 0.9rem;
+      color: #4B5563;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .dl-btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .dl-btn-primary { background: #2563EB; color: white; }
+    .dl-btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+    .dl-btn-secondary { background: #F1F5F9; color: #2C3E50; border: 1px solid #E2E8F0; }
+    .dl-btn-secondary:hover { background: #E2E8F0; }
+
+    /* 注意書き */
+    .notice {
+      background: #FFF7ED;
+      border: 1px solid #FED7AA;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 0.85rem;
+      color: #92400E;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* イラストグリッド */
+    .illust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .illust-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .illust-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37,99,235,0.15); }
+    .illust-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      background: #EFF6FF;
+    }
+    .illust-card-body { padding: 12px 14px 14px; }
+    .illust-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+    .illust-dl-link {
+      display: block;
+      text-align: center;
+      padding: 7px;
+      border-radius: 6px;
+      background: #EFF6FF;
+      color: #2563EB;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid #BFDBFE;
+      transition: background 0.2s;
+    }
+    .illust-dl-link:hover { background: #2563EB; color: white; text-decoration: none; }
+
+    /* ポスター */
+    .poster-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 2px 12px rgba(37,99,235,0.10);
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .poster-card img {
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+      border: 1px solid #E2E8F0;
+    }
+    .poster-info h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+    }
+    .poster-info p { font-size: 0.85rem; color: #4B5563; margin-bottom: 14px; line-height: 1.7; }
+
+    /* ファイル一覧テーブル */
+    .file-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #E2E8F0;
+      margin-bottom: 16px;
+    }
+    .file-table th {
+      background: #EFF6FF;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.82rem;
+      color: #2563EB;
+      font-weight: 700;
+    }
+    .file-table td {
+      padding: 11px 16px;
+      font-size: 0.85rem;
+      border-top: 1px solid #F1F5F9;
+      color: #2C3E50;
+    }
+    .file-table tr:hover td { background: #F8FAFC; }
+    .file-table a { color: #2563EB; font-weight: 600; font-size: 0.8rem; }
+
+    .footer-note {
+      text-align: center;
+      padding: 48px 20px;
+      font-size: 0.82rem;
+      color: #9CA3AF;
+    }
+
+    @media (max-width: 640px) {
+      .illust-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .poster-card { flex-direction: column; }
+      .poster-card img { width: 100%; height: 200px; }
+      .dl-btn-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>📦 素材ダウンロードページ</h1>
+  <p>オクデラメディカル 貸しスタジオ — ウェブページ・イラスト・ポスター一覧</p>
+</header>
+
+<div class="container">
+
+  <!-- ===== ウェブページ ===== -->
+  <section class="section">
+    <h2 class="section-title">🌐 ウェブページ（HTML）</h2>
+
+    <div class="notice">
+      ⚠️ <strong>保存方法：</strong>下の「スタンドアロン版を開く」ボタンでページを開き、ブラウザの <strong>「ファイル → 名前を付けて保存」（Ctrl+S / Cmd+S）</strong> でHTMLファイルとして保存してください。CSS・JSがすべて1ファイルに埋め込まれているため、そのまま動作します。
+    </div>
+
+    <div class="dl-webpage">
+      <h3>📄 スタンドアロン版（CSS・JS埋め込み済み・1ファイル）</h3>
+      <p>
+        CSS・JavaScriptをすべてHTMLに埋め込んだ完全版です。<br>
+        このファイル1つをダウンロードするだけで、スマホ・PCどちらでも動作します。<br>
+        Googleフォント・QRコードライブラリはCDN経由のため、インターネット接続が必要です。
+      </p>
+      <div class="dl-btn-group">
+        <a href="standalone.html" target="_blank" class="dl-btn dl-btn-primary">📄 スタンドアロン版を開く</a>
+        <a href="index.html" target="_blank" class="dl-btn dl-btn-secondary">🌐 通常版を開く</a>
+      </div>
+    </div>
+
+    <h3 style="font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:12px;">📂 個別ファイル一覧</h3>
+    <table class="file-table">
+      <thead>
+        <tr>
+          <th>ファイル</th>
+          <th>内容</th>
+          <th>リンク</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>index.html</code></td>
+          <td>メインページ（CSS/JSは外部ファイル参照）</td>
+          <td><a href="index.html" target="_blank">開く</a></td>
+        </tr>
+        <tr>
+          <td><code>css/style.css</code></td>
+          <td>スタイルシート（明朝体・パステルデザイン）</td>
+          <td><a href="css/style.css" target="_blank">開く</a></td>
+        </tr>
+        <tr>
+          <td><code>js/main.js</code></td>
+          <td>JavaScript（アコーディオン・QR・フォーム）</td>
+          <td><a href="js/main.js" target="_blank">開く</a></td>
+        </tr>
+        <tr>
+          <td><code>standalone.html</code></td>
+          <td>1ファイル完結版（CSS・JS埋め込み済み）</td>
+          <td><a href="standalone.html" target="_blank">開く</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== 承認済みポスター ===== -->
+  <section class="section">
+    <h2 class="section-title">🪧 電光看板ポスター（承認済みデザイン）</h2>
+
+    <div class="poster-card">
+      <img src="https://www.genspark.ai/api/files/s/9rznmzzi" alt="承認済み電光看板ポスター">
+      <div class="poster-info">
+        <h3>貸しスタジオ 電光看板デザイン（承認版）</h3>
+        <p>
+          A1縦（83cm×63cm）サイズ対応。<br>
+          シアン×ブルーグラデーション・黄色アクセント・ネオンサイン風。<br>
+          フラットイラスト×スタジオ写真の複合デザイン。
+        </p>
+        <div class="dl-btn-group">
+          <a href="https://www.genspark.ai/api/files/s/9rznmzzi" target="_blank" class="dl-btn dl-btn-primary">🖼️ 画像を開いて保存</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ヒーロー・施設イラスト ===== -->
+  <section class="section">
+    <h2 class="section-title">🏢 ヒーロー・施設イラスト</h2>
+    <div class="illust-grid">
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/jrvyyvXV?cache_control=3600" alt="ヒーロー画像" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🏃 ヒーロー画像（スタジオ全景）</p>
+          <a href="https://www.genspark.ai/api/files/s/jrvyyvXV?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/9IUYfl14?cache_control=3600" alt="スタジオ内観" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🪞 多目的スタジオ内観</p>
+          <a href="https://www.genspark.ai/api/files/s/9IUYfl14?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/yzrwKFlR?cache_control=3600" alt="セミナールーム" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">📋 セミナー・研修ルーム</p>
+          <a href="https://www.genspark.ai/api/files/s/yzrwKFlR?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== フィットネス・ウェルネス系 ===== -->
+  <section class="section">
+    <h2 class="section-title">💪 フィットネス・ウェルネス系イラスト</h2>
+    <div class="illust-grid">
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/Hr4q6bZi?cache_control=3600" alt="ヨガ・ピラティス" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🧘 ヨガ・ピラティス</p>
+          <a href="https://www.genspark.ai/api/files/s/Hr4q6bZi?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/uOJn9BIX?cache_control=3600" alt="太極拳・体操" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🥋 太極拳・体操</p>
+          <a href="https://www.genspark.ai/api/files/s/uOJn9BIX?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/MCB47Qnr?cache_control=3600" alt="ホットヨガ" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🔥 ホットヨガ</p>
+          <a href="https://www.genspark.ai/api/files/s/MCB47Qnr?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/oxl24B9m?cache_control=3600" alt="ストレッチング" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🤸 ストレッチング</p>
+          <a href="https://www.genspark.ai/api/files/s/oxl24B9m?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ダンス・パフォーマンス系 ===== -->
+  <section class="section">
+    <h2 class="section-title">💃 ダンス・パフォーマンス系イラスト</h2>
+    <div class="illust-grid">
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/ylLnr5it?cache_control=3600" alt="ダンス・バレエ" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🩰 ダンス・バレエ</p>
+          <a href="https://www.genspark.ai/api/files/s/ylLnr5it?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/Qxb9Ilhz?cache_control=3600" alt="キッズダンス" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🌈 キッズダンス</p>
+          <a href="https://www.genspark.ai/api/files/s/Qxb9Ilhz?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/OtRHhA0f?cache_control=3600" alt="社交ダンス" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🕺 社交ダンス</p>
+          <a href="https://www.genspark.ai/api/files/s/OtRHhA0f?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/JNC3Tr40?cache_control=3600" alt="ヒップホップ・ジャズ" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🎤 ヒップホップ・ジャズ</p>
+          <a href="https://www.genspark.ai/api/files/s/JNC3Tr40?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/OKFZawIF?cache_control=3600" alt="K-POP・アイドルダンス" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">⭐ K-POP・アイドルダンス</p>
+          <a href="https://www.genspark.ai/api/files/s/OKFZawIF?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== その他の活用 ===== -->
+  <section class="section">
+    <h2 class="section-title">📋 その他の活用イラスト（日本人版）</h2>
+    <div class="illust-grid">
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/EuNukWAn?cache_control=3600" alt="セミナー・研修" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">📊 セミナー・研修</p>
+          <a href="https://www.genspark.ai/api/files/s/EuNukWAn?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/QTZ397C6?cache_control=3600" alt="会議・ミーティング" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🤝 会議・ミーティング</p>
+          <a href="https://www.genspark.ai/api/files/s/QTZ397C6?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/8FfebNCt?cache_control=3600" alt="ワークショップ・発表会" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">🎭 ワークショップ・発表会</p>
+          <a href="https://www.genspark.ai/api/files/s/8FfebNCt?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+      <div class="illust-card">
+        <img src="https://www.genspark.ai/api/files/s/RKPvjs2C?cache_control=3600" alt="パーソナルトレーニング" loading="lazy">
+        <div class="illust-card-body">
+          <p class="illust-name">💪 パーソナルトレーニング</p>
+          <a href="https://www.genspark.ai/api/files/s/RKPvjs2C?cache_control=3600" target="_blank" class="illust-dl-link">画像を開いて保存</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">
+    <p>© 2025 オクデラメディカル 貸しスタジオ — 素材ダウンロードページ</p>
+    <p style="margin-top:6px;">画像は各リンクを開き、右クリック →「名前を付けて画像を保存」でダウンロードしてください。</p>
+  </div>
+
+</div>
+</body>
+</html>

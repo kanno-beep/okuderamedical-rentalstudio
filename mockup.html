@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design Mockup ｜ オクデラメディカル 貸しスタジオ</title>
+  <meta name="description" content="オクデラメディカル 貸しスタジオ Webサイト ｜ デザインモックアップ提案資料">
+  <meta name="robots" content="noindex,nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-primary: #2563EB;
+      --brand-secondary: #0EA5E9;
+      --brand-accent: #F59E0B;
+      --text-dark: #0F172A;
+      --text-body: #334155;
+      --text-muted: #64748B;
+      --bg-cream: #FAF8F3;
+      --bg-pastel: #EFF6FF;
+      --bg-light: #F8FAFC;
+      --line: #E2E8F0;
+      --serif: 'Noto Serif JP', 'Yu Mincho', '游明朝', serif;
+      --sans: 'Noto Sans JP', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--text-body);
+      background: var(--bg-cream);
+      line-height: 1.8;
+      -webkit-text-size-adjust: 100%;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--brand-primary); text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ============================= COVER ============================= */
+    .cover {
+      position: relative;
+      min-height: 100vh;
+      padding: 80px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(37, 99, 235, 0.10), transparent 40%),
+        radial-gradient(circle at 10% 90%, rgba(14, 165, 233, 0.08), transparent 40%),
+        var(--bg-cream);
+      overflow: hidden;
+    }
+    .cover-meta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--brand-primary);
+      margin-bottom: 32px;
+    }
+    .cover-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      max-width: 1080px;
+    }
+    .cover-title .accent { color: var(--brand-primary); }
+    .cover-sub {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      color: var(--text-body);
+      max-width: 720px;
+      line-height: 1.9;
+      margin-bottom: 48px;
+    }
+    .cover-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+      max-width: 720px;
+      padding-top: 40px;
+      border-top: 1px solid var(--line);
+    }
+    .cover-info dt {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .cover-info dd {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .cover-scroll {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--text-muted);
+      animation: bob 2.4s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, 6px); }
+    }
+
+    /* ============================= SECTION COMMON ============================= */
+    .section {
+      padding: 100px 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-num {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--brand-primary);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-family: var(--serif);
+      font-size: 1.02rem;
+      color: var(--text-body);
+      max-width: 760px;
+      line-height: 1.9;
+      margin-bottom: 56px;
+    }
+
+    /* ============================= CONCEPT ============================= */
+    .concept {
+      background: var(--bg-pastel);
+    }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+    .concept-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 32px 26px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .concept-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+    }
+    .concept-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--bg-pastel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+    .concept-card h3 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .concept-card p {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    /* ============================= DEVICE MOCKUPS ============================= */
+    .devices {
+      background: linear-gradient(180deg, var(--bg-cream) 0%, #fff 100%);
+    }
+    .device-stage {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .device-stage { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* MacBook frame */
+    .laptop {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .laptop-screen {
+      background: #1a1a2e;
+      border-radius: 16px 16px 4px 4px;
+      padding: 14px 14px 14px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+    }
+    .laptop-bar {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+    .laptop-bar span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #ff5f57;
+    }
+    .laptop-bar span:nth-child(2) { background: #febc2e; }
+    .laptop-bar span:nth-child(3) { background: #28c840; }
+    .laptop-frame {
+      background: #fff;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      position: relative;
+    }
+    .laptop-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .laptop-base {
+      width: 110%;
+      height: 14px;
+      background: linear-gradient(180deg, #C7CBD1, #9CA3AF);
+      margin: 0 -5%;
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
+    }
+    .laptop-base::after {
+      content: '';
+      display: block;
+      width: 14%;
+      height: 4px;
+      background: #6B7280;
+      margin: 0 auto;
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* iPhone frame */
+    .phone {
+      position: relative;
+      width: 290px;
+      margin: 0 auto;
+    }
+    .phone-frame {
+      background: #1a1a2e;
+      border-radius: 42px;
+      padding: 12px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+      position: relative;
+    }
+    .phone-frame::before {
+      content: '';
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 22px;
+      background: #1a1a2e;
+      border-radius: 0 0 14px 14px;
+      z-index: 3;
+    }
+    .phone-screen {
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      aspect-ratio: 9 / 19.5;
+      position: relative;
+    }
+    .phone-screen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .device-caption {
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 18px;
+      letter-spacing: 0.2em;
+    }
+
+    /* ============================= FEATURE LIST ============================= */
+    .features { background: #fff; }
+    .feature-row {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 60px;
+      padding: 48px 0;
+      border-top: 1px solid var(--line);
+      align-items: start;
+    }
+    .feature-row:first-of-type { border-top: none; padding-top: 0; }
+    @media (max-width: 800px) {
+      .feature-row { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+    }
+    .feature-row-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      color: var(--brand-primary);
+      margin-bottom: 8px;
+    }
+    .feature-row h3 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+    .feature-row p {
+      font-family: var(--serif);
+      font-size: 0.96rem;
+      line-height: 1.95;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .feature-tag {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      background: var(--bg-pastel);
+      color: var(--brand-primary);
+      border-radius: 50px;
+      border: 1px solid #BFDBFE;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================= DESIGN SYSTEM ============================= */
+    .system {
+      background: var(--bg-light);
+    }
+    .system-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    @media (max-width: 800px) {
+      .system-grid { grid-template-columns: 1fr; }
+    }
+    .system-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px;
+      border: 1px solid var(--line);
+    }
+    .system-card h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--line);
+    }
+    .color-row {
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .color-row:last-child { border-bottom: none; }
+    .color-swatch {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.1);
+    }
+    .color-name {
+      font-family: var(--sans);
+      font-weight: 700;
+      color: var(--text-dark);
+      font-size: 0.92rem;
+    }
+    .color-name small {
+      display: block;
+      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      margin-top: 2px;
+    }
+    .color-hex {
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .type-sample {
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--line);
+    }
+    .type-sample:last-child { border-bottom: none; }
+    .type-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .type-serif {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: 0.04em;
+    }
+    .type-sans {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--text-body);
+      letter-spacing: 0.02em;
+    }
+    .type-num {
+      font-family: var(--sans);
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--brand-primary);
+    }
+
+    /* ============================= TECH ============================= */
+    .tech {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.85);
+    }
+    .tech .section-num { color: #93C5FD; }
+    .tech .section-title { color: #fff; }
+    .tech .section-lead { color: rgba(255,255,255,0.75); }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+    }
+    .tech-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .tech-item h4 {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .tech-item p {
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+    .tech-item .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      padding: 2px 8px;
+      background: rgba(147, 197, 253, 0.15);
+      color: #93C5FD;
+      border-radius: 4px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ============================= CTA ============================= */
+    .cta {
+      padding: 100px 40px;
+      text-align: center;
+      background: var(--bg-cream);
+    }
+    .cta h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: var(--text-dark);
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+    .cta p {
+      font-family: var(--serif);
+      color: var(--text-body);
+      margin-bottom: 36px;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 36px;
+      border-radius: 50px;
+      font-family: var(--sans);
+      font-size: 0.98rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn-primary {
+      background: var(--brand-primary);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    }
+    .cta-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+    }
+    .cta-btn-outline {
+      background: #fff;
+      color: var(--text-dark);
+      border: 2px solid var(--line);
+    }
+    .cta-btn-outline:hover {
+      border-color: var(--brand-primary);
+      color: var(--brand-primary);
+      transform: translateY(-3px);
+    }
+
+    /* ============================= FOOTER ============================= */
+    .footer {
+      padding: 36px 40px;
+      text-align: center;
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.78rem;
+    }
+    .footer strong { color: #fff; }
+
+    /* ============================= RESPONSIVE ============================= */
+    @media (max-width: 640px) {
+      .cover, .section, .cta { padding-left: 22px; padding-right: 22px; }
+      .section { padding-top: 70px; padding-bottom: 70px; }
+      .cover { padding: 64px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =============== COVER =============== -->
+  <section class="cover">
+    <p class="cover-meta">WEB DESIGN MOCKUP ／ 2026</p>
+    <h1 class="cover-title">
+      多目的スタジオで、<br>
+      <span class="accent">あなたの&quot;やりたい&quot;</span>を実現する。
+    </h1>
+    <p class="cover-sub">
+      A1サイズの電光板QRコードから訪れる方が、スタジオの魅力・料金・予約までを片手でスムーズに完結できる、スマートフォン最優先の予約サイトをご提案いたします。
+    </p>
+    <dl class="cover-info">
+      <div>
+        <dt>CLIENT</dt>
+        <dd>オクデラメディカル</dd>
+      </div>
+      <div>
+        <dt>PROJECT</dt>
+        <dd>貸しスタジオ Webサイト</dd>
+      </div>
+      <div>
+        <dt>LOCATION</dt>
+        <dd>東京都北区王子</dd>
+      </div>
+      <div>
+        <dt>SCOPE</dt>
+        <dd>QR連動型予約サイト</dd>
+      </div>
+    </dl>
+    <p class="cover-scroll">SCROLL ▾</p>
+  </section>
+
+  <!-- =============== CONCEPT =============== -->
+  <section class="section concept" id="concept">
+    <p class="section-num">01 ／ CONCEPT</p>
+    <h2 class="section-title">電光板QRから、3タップで予約完了へ。</h2>
+    <p class="section-lead">
+      A1サイズの電光板を見て興味を持った方が、QRコードをスマートフォンで読み取った瞬間から、迷わず予約まで進める「スマホ専用のような」体験を設計しました。同時にPCからの予約・問い合わせにも美しく対応します。
+    </p>
+    <div class="concept-grid">
+      <div class="concept-card">
+        <div class="concept-icon">📱</div>
+        <h3>モバイルファースト</h3>
+        <p>QRから訪れる方の99%はスマートフォン。指で押しやすいCTA、ハンバーガーメニュー、ドロワー型ナビで操作性を最優先。</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">🎨</div>
+        <h3>明朝体 × パステルブルー</h3>
+        <p>オクデラメディカルの「医療の信頼感」と「明るく開放的なスタジオ」の両方を、和の明朝体と爽やかなブルーで表現。</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">📋</div>
+        <h3>3ステップ予約フォーム</h3>
+        <p>「ご利用内容→日時→連絡先」の段階入力で挫折を防止。入力サマリを表示してから送信、安心感を演出します。</p>
+      </div>
+      <div class="concept-card">
+        <div class="concept-icon">🔄</div>
+        <h3>多用途を伝えるスライド</h3>
+        <p>ヨガ・バレエ・ダンス・セミナーの4種類の利用イメージをヒーローで自動切替。多目的さを一目で訴求。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== DEVICE PREVIEW =============== -->
+  <section class="section devices" id="devices">
+    <p class="section-num">02 ／ DEVICE PREVIEW</p>
+    <h2 class="section-title">PC・スマホの両方で、品よく。</h2>
+    <p class="section-lead">
+      下記は実際にブラウザで動作するモックアップです。スクロール・タップ・スライドショー切替など、すべて本番と同じ動作をご確認いただけます。
+    </p>
+    <div class="device-stage">
+      <div>
+        <div class="laptop">
+          <div class="laptop-screen">
+            <div class="laptop-bar"><span></span><span></span><span></span></div>
+            <div class="laptop-frame">
+              <iframe src="index.html" title="PC表示" loading="lazy"></iframe>
+            </div>
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+        <p class="device-caption">DESKTOP — 1280 × 800</p>
+      </div>
+      <div>
+        <div class="phone">
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <iframe src="index.html" title="スマホ表示" loading="lazy" style="width: 375px; height: 812px; transform: scale(0.69); transform-origin: top left;"></iframe>
+            </div>
+          </div>
+        </div>
+        <p class="device-caption">MOBILE — iPhone風</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== FEATURE TOUR =============== -->
+  <section class="section features" id="features">
+    <p class="section-num">03 ／ FEATURES</p>
+    <h2 class="section-title">細部までこだわった、6つの機能ハイライト。</h2>
+    <p class="section-lead">
+      訪問者の行動を1段階先回りした設計で、離脱を抑え、予約率を高めるための工夫を散りばめました。
+    </p>
+
+    <div class="feature-row">
+      <div>
+        <p class="feature-row-label">HERO ／ FIRST IMPRESSION</p>
+        <h3>4スライドの自動切替ヒーロー</h3>
+      </div>
+      <div>
+        <p>「心と身体を、ととのえる」「優雅を、磨く時間」「魅せるを、極める」「ビジネスを、前へ進める」——ヨガ、バレエ、ダンス、セミナーそれぞれの利用シーンに合わせたコピーとイラストを5.5秒ごとにフェード切替。スワイプ・ホバー停止・電池配慮など細やかな配慮を実装。</p>
+        <div class="feature-tags">
+          <span class="feature-tag">クロスフェード</span>
+          <span class="feature-tag">スワイプ対応</span>
+          <span class="feature-tag">アクセシビリティ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <p class="feature-row-label">NAVIGATION</p>
+        <h3>ハンバーガーメニュー＋ドロワー</h3>
+      </div>
+      <div>
+        <p>スマートフォン表示では右上のアイコンから滑らかにドロワーが開閉。全セクションへのジャンプリンクと、最下部に大きな電話CTA。ESCキーや背景タップでも閉じられる本格仕様。</p>
+        <div class="feature-tags">
+          <span class="feature-tag">滑らか開閉</span>
+          <span class="feature-tag">電話CTA内蔵</span>
+          <span class="feature-tag">ESC対応</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <p class="feature-row-label">PROGRAMS</p>
+        <h3>「もっと見る」展開</h3>
+      </div>
+      <div>
+        <p>多彩なプログラムを3カテゴリーのアコーディオンで整理。PCは各カテゴリー3件、スマホは1件まで初期表示し、「もっと見る（+N件）」で残りを展開。情報量と一覧性のバランスを最適化。</p>
+        <div class="feature-tags">
+          <span class="feature-tag">情報整理</span>
+          <span class="feature-tag">レスポンシブ件数</span>
+          <span class="feature-tag">展開アニメ</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <p class="feature-row-label">RESERVATION</p>
+        <h3>3ステップ式予約フォーム</h3>
+      </div>
+      <div>
+        <p>「ご利用内容 → 日時 → 連絡先」と進める段階入力フォーム。プログレスバーで現在位置を可視化し、最終ステップで入力サマリを表示してから送信。スマホでの長い1画面入力ストレスを解消します。</p>
+        <div class="feature-tags">
+          <span class="feature-tag">プログレスバー</span>
+          <span class="feature-tag">入力サマリ確認</span>
+          <span class="feature-tag">各段階バリデーション</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <p class="feature-row-label">CTA</p>
+        <h3>消えるフローティングCTA</h3>
+      </div>
+      <div>
+        <p>画面下に常時表示される「電話で予約」「フォームで予約」ボタンは、予約フォームに到達すると自動的に非表示に。「送信」ボタンと被らず、本来のフォーム操作を妨げません。</p>
+        <div class="feature-tags">
+          <span class="feature-tag">自動非表示</span>
+          <span class="feature-tag">意図検知</span>
+          <span class="feature-tag">UX配慮</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div>
+        <p class="feature-row-label">QR LANDING</p>
+        <h3>QR訪問者専用の動線</h3>
+      </div>
+      <div>
+        <p>スマホからの訪問にはQR表示を省略し、代わりに「共有のご案内」を表示。電光板から来た方には不要な情報を排し、最短距離で予約まで導きます。PC表示では従来通りQR表示・印刷データ用に活用可能。</p>
+        <div class="feature-tags">
+          <span class="feature-tag">条件分岐表示</span>
+          <span class="feature-tag">無駄ゼロ</span>
+          <span class="feature-tag">PC共存</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== DESIGN SYSTEM =============== -->
+  <section class="section system" id="system">
+    <p class="section-num">04 ／ DESIGN SYSTEM</p>
+    <h2 class="section-title">一貫したカラー＆タイポグラフィ。</h2>
+    <p class="section-lead">
+      ブランドの世界観を支える、限定されたパレットとフォントセット。スタジオの清潔感・開放感を視覚的に表現します。
+    </p>
+    <div class="system-grid">
+      <div class="system-card">
+        <h3>COLOR PALETTE</h3>
+        <div class="color-row">
+          <div class="color-swatch" style="background:#2563EB"></div>
+          <div class="color-name">Brand Primary<small>主CTA・アクセント・リンク</small></div>
+          <div class="color-hex">#2563EB</div>
+        </div>
+        <div class="color-row">
+          <div class="color-swatch" style="background:#0EA5E9"></div>
+          <div class="color-name">Brand Secondary<small>サブアクション・進捗</small></div>
+          <div class="color-hex">#0EA5E9</div>
+        </div>
+        <div class="color-row">
+          <div class="color-swatch" style="background:#F59E0B"></div>
+          <div class="color-name">Accent<small>「人気No.1」など強調</small></div>
+          <div class="color-hex">#F59E0B</div>
+        </div>
+        <div class="color-row">
+          <div class="color-swatch" style="background:#EFF6FF; border:1px solid #DBEAFE"></div>
+          <div class="color-name">Pastel<small>カード背景・ハイライト</small></div>
+          <div class="color-hex">#EFF6FF</div>
+        </div>
+        <div class="color-row">
+          <div class="color-swatch" style="background:#1a1a2e"></div>
+          <div class="color-name">Text Dark<small>見出し・本文最濃</small></div>
+          <div class="color-hex">#1A1A2E</div>
+        </div>
+      </div>
+
+      <div class="system-card">
+        <h3>TYPOGRAPHY</h3>
+        <div class="type-sample">
+          <div class="type-label">SERIF — HEADING</div>
+          <div class="type-serif">Noto Serif JP　貸しスタジオ</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">SANS — BODY</div>
+          <div class="type-sans">Noto Sans JP — ロッカールーム・シャワー完備</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">NUMERIC — PRICE</div>
+          <div class="type-num">¥2,500 ／ 1時間</div>
+        </div>
+        <div class="type-sample">
+          <div class="type-label">DESIGN PRINCIPLES</div>
+          <ul style="font-size: 0.88rem; line-height: 1.9; color: var(--text-body); padding-left: 1.2em; list-style: disc;">
+            <li>明朝体で見出し、丸ゴシックで本文の組み合わせ</li>
+            <li>letter-spacing 0.04em で和文に余白を持たせる</li>
+            <li>line-height 1.85 で読みやすさ最優先</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== TECH =============== -->
+  <section class="section tech" id="tech">
+    <p class="section-num">05 ／ TECHNOLOGY</p>
+    <h2 class="section-title">堅実で、長く使えるシンプル構成。</h2>
+    <p class="section-lead">
+      重いフレームワークに依存せず、HTML・CSS・JavaScript の素直な構成で実装。CMS不要・サーバー不要・どこにでもデプロイできます。
+    </p>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <span class="badge">HTML5</span>
+        <h4>セマンティックHTML</h4>
+        <p>セクション要素・ARIA属性で構造化。検索エンジンと読み上げソフトの両方に優しい。</p>
+      </div>
+      <div class="tech-item">
+        <span class="badge">CSS3</span>
+        <h4>CSS変数＋レスポンシブ</h4>
+        <p>:root で色・余白を一元管理。640px・900px の2ブレークポイントで全画面に対応。</p>
+      </div>
+      <div class="tech-item">
+        <span class="badge">VANILLA JS</span>
+        <h4>軽量JavaScript</h4>
+        <p>外部ライブラリは QRコード生成のみ。約700行の素直なコードで全機能を実装。</p>
+      </div>
+      <div class="tech-item">
+        <span class="badge">A11Y</span>
+        <h4>アクセシビリティ</h4>
+        <p>キーボード操作・focus-visible・prefers-reduced-motion 対応で誰でも快適に。</p>
+      </div>
+      <div class="tech-item">
+        <span class="badge">DEPLOY</span>
+        <h4>静的ホスティング対応</h4>
+        <p>GitHub Pages・Netlify・Vercel・さくらインターネット等、どこにでも置ける純静的サイト。</p>
+      </div>
+      <div class="tech-item">
+        <span class="badge">SEO</span>
+        <h4>OGP・メタデータ</h4>
+        <p>SNS共有時のサムネイル、検索結果のスニペット、すべて最適化済み。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============== CTA =============== -->
+  <section class="cta">
+    <h2>実際のサイトを、ご覧ください。</h2>
+    <p>下記ボタンから、本番と同じ動作の実機プレビューにアクセスできます。</p>
+    <div class="cta-btns">
+      <a href="index.html" class="cta-btn cta-btn-primary">▶ 実サイトを開く</a>
+      <a href="tel:0339195111" class="cta-btn cta-btn-outline">📞 03-3919-5111</a>
+    </div>
+  </section>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="footer">
+    <p><strong>オクデラメディカル 貸しスタジオ</strong> — ウエルネスオクデラビルズ 3F</p>
+    <p>〒114-0022 東京都北区王子2-26-2 ／ TEL 03-3919-5111</p>
+    <p style="margin-top: 16px; font-size: 0.7rem; opacity: 0.6;">Web Design Mockup ／ Prepared for client review</p>
+  </footer>
+
+</body>
+</html>
