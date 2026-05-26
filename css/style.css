@@ -1136,6 +1136,197 @@ body.drawer-open { overflow: hidden; }
 }
 
 /* --------------------------------------------------------------------------
+   ご相談カード（委細面談制）
+   -------------------------------------------------------------------------- */
+.consult-card {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  border-radius: 24px;
+  padding: 48px 32px;
+  margin: 0 auto 56px;
+  max-width: 880px;
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.consult-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+}
+.consult-card::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+.consult-card-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+.consult-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.consult-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.consult-title .accent {
+  color: #FEF3C7;
+  font-size: 1.25em;
+  padding: 0 4px;
+}
+.consult-lead {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.95);
+  line-height: 1.95;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.consult-cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.consult-btn {
+  display: inline-flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px !important;
+  min-width: 240px;
+  padding: 16px 28px !important;
+  font-size: 1.15rem !important;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+.consult-btn-sub {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+.consult-cta-row .btn-primary {
+  background: #fff;
+  color: var(--brand-primary) !important;
+  border-color: #fff;
+}
+.consult-cta-row .btn-primary:hover {
+  background: var(--bg-pastel);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+}
+.consult-cta-row .btn-outline-primary {
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgba(255,255,255,0.85);
+}
+.consult-cta-row .btn-outline-primary:hover {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-3px);
+}
+
+/* ご利用パターン例 */
+.usage-pattern-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+.usage-pattern-sub {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 32px;
+  letter-spacing: 0.04em;
+}
+
+.usage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.usage-card {
+  background: var(--card-bg);
+  border: 1px solid var(--accordion-border);
+  border-radius: 16px;
+  padding: 24px 22px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.usage-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-secondary);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+}
+.usage-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-pastel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 1.7rem;
+}
+.usage-name {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+.usage-desc {
+  font-family: var(--font-serif);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
    予約セクション
    -------------------------------------------------------------------------- */
 .reservation-section {
@@ -1974,6 +2165,21 @@ body.drawer-open { overflow: hidden; }
   .pricing-grid {
     grid-template-columns: 1fr;
   }
+
+  /* ご相談カード スマホ調整 */
+  .consult-card { padding: 32px 20px; margin-bottom: 36px; border-radius: 18px; }
+  .consult-title { font-size: 1.45rem; line-height: 1.55; }
+  .consult-title .accent { font-size: 1.18em; }
+  .consult-lead { font-size: 0.92rem; line-height: 1.9; margin-bottom: 24px; }
+  .consult-cta-row { flex-direction: column; gap: 12px; }
+  .consult-btn { width: 100%; min-width: auto; font-size: 1.05rem !important; }
+  .usage-pattern-title { font-size: 1.15rem; }
+  .usage-pattern-sub { font-size: 0.85rem; margin-bottom: 22px; }
+  .usage-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .usage-card { padding: 18px 12px; }
+  .usage-icon-wrap { width: 46px; height: 46px; font-size: 1.4rem; margin-bottom: 10px; }
+  .usage-name { font-size: 0.95rem; }
+  .usage-desc { font-size: 0.78rem; line-height: 1.7; }
 
   .accordion-sub {
     display: none;
