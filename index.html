@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>貸しスタジオ | オクデラメディカル ウエルネスオクデラビルズ 3F</title>
   <meta name="description" content="東京都北区王子の貸しスタジオ。ロッカールーム・シャワー完備。ヨガ・ダンス・セミナーなど多目的に利用できます。">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260528">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -456,60 +456,69 @@
   <!-- ご利用料金（個別相談制） -->
   <section class="pricing-section" id="pricing">
     <div class="container">
+      <p class="section-num">FOR YOUR USE</p>
       <h2 class="section-title">ご利用料金</h2>
       <p class="section-sub">ご利用内容に合わせて、最適なプランを個別にご案内いたします</p>
 
-      <!-- 個別相談カード（メイン） -->
-      <div class="consult-card">
-        <div class="consult-card-inner">
-          <p class="consult-badge">💬 個別ご相談制</p>
-          <h3 class="consult-title">
-            料金は<span class="accent">委細面談</span>にて<br class="hero-br-sp">
-            ご案内しております
-          </h3>
-          <p class="consult-lead">
-            ご利用人数・時間帯・頻度・用途によって、最適な料金プランを<br class="hero-br-sp">
-            柔軟にご提案しています。まずはお気軽にご相談ください。
-          </p>
+      <!-- ご利用パターン例 -->
+      <div class="usage-grid">
+        <div class="usage-card">
+          <span class="usage-num">01</span>
+          <div class="usage-icon-wrap"><span class="usage-icon">⏰</span></div>
+          <h4 class="usage-name">スポット利用</h4>
+          <p class="usage-desc">単発のレッスン・撮影・打合せに。<br>1時間単位からご相談可能です。</p>
+        </div>
 
-          <div class="consult-cta-row">
-            <a href="tel:0339195111" class="btn btn-primary btn-lg consult-btn">
-              📞 03-3919-5111<span class="consult-btn-sub">お電話でのご相談</span>
-            </a>
-            <a href="#reservation" class="btn btn-outline-primary btn-lg consult-btn">
-              📋 フォームでご相談<span class="consult-btn-sub">24時間受付</span>
-            </a>
-          </div>
+        <div class="usage-card">
+          <span class="usage-num">02</span>
+          <div class="usage-icon-wrap"><span class="usage-icon">🌅</span></div>
+          <h4 class="usage-name">半日・1日利用</h4>
+          <p class="usage-desc">セミナー・ワークショップ・発表会など、<br>まとまった時間でのご利用に。</p>
+        </div>
+
+        <div class="usage-card">
+          <span class="usage-num">03</span>
+          <div class="usage-icon-wrap"><span class="usage-icon">📅</span></div>
+          <h4 class="usage-name">定期利用</h4>
+          <p class="usage-desc">週1回・月4回など継続利用に。<br>優先予約枠の確保もご相談ください。</p>
+        </div>
+
+        <div class="usage-card">
+          <span class="usage-num">04</span>
+          <div class="usage-icon-wrap"><span class="usage-icon">🏢</span></div>
+          <h4 class="usage-name">法人ご利用</h4>
+          <p class="usage-desc">企業研修・社内セミナー・株主総会等。<br>請求書払い対応も可能です。</p>
         </div>
       </div>
 
-      <!-- ご利用パターン例（参考） -->
-      <h3 class="usage-pattern-title">ご利用パターン例</h3>
-      <p class="usage-pattern-sub">下記のような利用シーンに合わせてご相談承ります</p>
-
-      <div class="usage-grid">
-        <div class="usage-card">
-          <div class="usage-icon-wrap"><span class="usage-icon">⏰</span></div>
-          <h4 class="usage-name">スポット利用</h4>
-          <p class="usage-desc">単発のレッスン・撮影・打合せに。1時間単位からご相談可能です。</p>
-        </div>
-
-        <div class="usage-card">
-          <div class="usage-icon-wrap"><span class="usage-icon">🌅</span></div>
-          <h4 class="usage-name">半日・1日利用</h4>
-          <p class="usage-desc">セミナー・ワークショップ・発表会など、まとまった時間でのご利用に。</p>
-        </div>
-
-        <div class="usage-card">
-          <div class="usage-icon-wrap"><span class="usage-icon">📅</span></div>
-          <h4 class="usage-name">定期利用</h4>
-          <p class="usage-desc">週1回・月4回など継続利用に。優先予約枠の確保もご相談ください。</p>
-        </div>
-
-        <div class="usage-card">
-          <div class="usage-icon-wrap"><span class="usage-icon">🏢</span></div>
-          <h4 class="usage-name">法人ご利用</h4>
-          <p class="usage-desc">企業研修・社内セミナー・株主総会等。請求書払い対応も可能です。</p>
+      <!-- ご相談カード -->
+      <div class="consult-card">
+        <div class="consult-card-decor"></div>
+        <div class="consult-card-inner">
+          <p class="consult-badge">PRICE ／ 委細面談制</p>
+          <h3 class="consult-title">
+            ご利用料金は、<br class="hero-br-sp"><span class="accent">面談にて</span>ご案内
+          </h3>
+          <p class="consult-lead">
+            ご利用人数・時間帯・頻度・用途によって、最適なプランを柔軟にご提案いたします。<br>
+            まずはお気軽にご相談ください。
+          </p>
+          <div class="consult-cta-row">
+            <a href="tel:0339195111" class="consult-btn consult-btn-tel">
+              <span class="consult-btn-icon">📞</span>
+              <span class="consult-btn-body">
+                <span class="consult-btn-label">お電話でのご相談</span>
+                <span class="consult-btn-main">03-3919-5111</span>
+              </span>
+            </a>
+            <a href="#reservation" class="consult-btn consult-btn-form">
+              <span class="consult-btn-icon">📋</span>
+              <span class="consult-btn-body">
+                <span class="consult-btn-label">24時間受付</span>
+                <span class="consult-btn-main">フォームでご相談</span>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -869,6 +878,6 @@
     <a href="#reservation" class="floating-form">📋 フォームで予約</a>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260528"></script>
 </body>
 </html>

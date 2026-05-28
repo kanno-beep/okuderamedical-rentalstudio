@@ -1124,206 +1124,267 @@ body.drawer-open { overflow: hidden; }
   line-height: 1.65;
 }
 
-.pricing-note {
+/* .pricing-note は下の新版で再定義 */
+
+/* --------------------------------------------------------------------------
+   セクション英字キャプション
+   -------------------------------------------------------------------------- */
+.section-num {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  color: var(--brand-primary);
   text-align: center;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-top: 28px;
-  line-height: 1.6;
-  background: var(--bg-light);
-  padding: 16px;
-  border-radius: 10px;
+  margin-bottom: 12px;
 }
 
 /* --------------------------------------------------------------------------
-   ご相談カード（委細面談制）
+   ご利用パターングリッド（番号付き上品なカード）
    -------------------------------------------------------------------------- */
-.consult-card {
-  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
-  border-radius: 24px;
-  padding: 48px 32px;
-  margin: 0 auto 56px;
-  max-width: 880px;
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.25);
+.usage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto 64px;
+}
+
+.usage-card {
   position: relative;
+  background: #fff;
+  border: 1px solid var(--accordion-border);
+  border-radius: 18px;
+  padding: 36px 24px 28px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   overflow: hidden;
 }
-.consult-card::before {
+.usage-card::before {
   content: '';
   position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 240px;
-  height: 240px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
-.consult-card::after {
+.usage-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--brand-secondary);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.14);
+}
+.usage-card:hover::before { opacity: 1; }
+
+/* 番号 */
+.usage-num {
+  display: block;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--brand-primary);
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
+}
+
+.usage-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--bg-pastel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.85rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+.usage-card:hover .usage-icon-wrap {
+  background: var(--brand-primary);
+  transform: scale(1.05);
+}
+.usage-card:hover .usage-icon { filter: grayscale(1) brightness(8); }
+
+.usage-name {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--accordion-border);
+  letter-spacing: 0.06em;
+}
+.usage-desc {
+  font-family: var(--font-serif);
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   ご相談カード（メイン CTA）
+   -------------------------------------------------------------------------- */
+.consult-card {
+  position: relative;
+  background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 55%, #0EA5E9 100%);
+  border-radius: 24px;
+  padding: 56px 40px;
+  margin: 0 auto;
+  max-width: 1080px;
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.3);
+  overflow: hidden;
+}
+.consult-card-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.consult-card-decor::before,
+.consult-card-decor::after {
   content: '';
   position: absolute;
-  bottom: -80px;
-  left: -80px;
-  width: 200px;
-  height: 200px;
-  background: rgba(255,255,255,0.06);
   border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.18) 0%, transparent 70%);
 }
+.consult-card-decor::before {
+  width: 360px; height: 360px;
+  top: -160px; right: -120px;
+}
+.consult-card-decor::after {
+  width: 280px; height: 280px;
+  bottom: -140px; left: -100px;
+  background: radial-gradient(circle at center, rgba(254, 243, 199, 0.15) 0%, transparent 70%);
+}
+
 .consult-card-inner {
   position: relative;
   z-index: 1;
   text-align: center;
   color: #fff;
 }
+
 .consult-badge {
   display: inline-block;
-  background: rgba(255,255,255,0.2);
-  color: #fff;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 5px 16px;
-  border-radius: 50px;
-  margin-bottom: 18px;
-  letter-spacing: 0.1em;
-  border: 1px solid rgba(255,255,255,0.4);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #FEF3C7;
+  letter-spacing: 0.3em;
+  margin-bottom: 22px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(254, 243, 199, 0.4);
 }
+
 .consult-title {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 900;
   color: #fff;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
+  line-height: 1.55;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
 }
 .consult-title .accent {
   color: #FEF3C7;
-  font-size: 1.25em;
-  padding: 0 4px;
+  position: relative;
+  padding: 0 6px;
 }
+.consult-title .accent::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: #FEF3C7;
+  opacity: 0.5;
+}
+
 .consult-lead {
   font-family: var(--font-serif);
   font-size: 1rem;
-  color: rgba(255,255,255,0.95);
-  line-height: 1.95;
-  letter-spacing: 0.04em;
-  margin-bottom: 32px;
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.consult-cta-row {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.consult-btn {
-  display: inline-flex !important;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px !important;
-  min-width: 240px;
-  padding: 16px 28px !important;
-  font-size: 1.15rem !important;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-}
-.consult-btn-sub {
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  opacity: 0.85;
-  margin-top: 2px;
-}
-.consult-cta-row .btn-primary {
-  background: #fff;
-  color: var(--brand-primary) !important;
-  border-color: #fff;
-}
-.consult-cta-row .btn-primary:hover {
-  background: var(--bg-pastel);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
-}
-.consult-cta-row .btn-outline-primary {
-  background: transparent;
-  color: #fff !important;
-  border: 2px solid rgba(255,255,255,0.85);
-}
-.consult-cta-row .btn-outline-primary:hover {
-  background: rgba(255,255,255,0.15);
-  transform: translateY(-3px);
-}
-
-/* ご利用パターン例 */
-.usage-pattern-title {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  text-align: center;
+  color: rgba(255,255,255,0.92);
+  line-height: 2;
   letter-spacing: 0.05em;
-  margin-top: 32px;
-  margin-bottom: 4px;
-}
-.usage-pattern-sub {
-  font-family: var(--font-serif);
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  text-align: center;
-  margin-bottom: 32px;
-  letter-spacing: 0.04em;
+  margin: 0 auto 36px;
+  max-width: 720px;
 }
 
-.usage-grid {
+/* 2カラム CTA */
+.consult-cta-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 720px;
   margin: 0 auto;
 }
-.usage-card {
-  background: var(--card-bg);
-  border: 1px solid var(--accordion-border);
-  border-radius: 16px;
-  padding: 24px 22px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+.consult-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: 14px;
+  text-decoration: none !important;
+  color: var(--text-dark);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  text-align: left;
 }
-.usage-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--brand-secondary);
-  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.12);
+.consult-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.22);
+  text-decoration: none !important;
 }
-.usage-icon-wrap {
-  width: 56px;
-  height: 56px;
+.consult-btn-icon {
+  flex-shrink: 0;
+  width: 48px; height: 48px;
   border-radius: 50%;
-  background: var(--bg-pastel);
+  background: var(--brand-primary);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 14px;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
 }
-.usage-name {
-  font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 8px;
-  letter-spacing: 0.05em;
+.consult-btn-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
 }
-.usage-desc {
-  font-family: var(--font-serif);
-  font-size: 0.86rem;
+.consult-btn-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
   color: var(--text-muted);
-  line-height: 1.8;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.2em;
+}
+.consult-btn-main {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--brand-primary);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+.consult-btn-form .consult-btn-icon {
+  background: var(--brand-accent);
+  color: #1a1a1a;
+}
+.consult-btn-form:hover .consult-btn-icon {
+  background: #f59e0b;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 36px;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
 }
 
 /* --------------------------------------------------------------------------
@@ -2001,6 +2062,9 @@ body.drawer-open { overflow: hidden; }
    レスポンシブ - タブレット (max 900px)
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
+  /* タブレット：利用パターンを2列に */
+  .usage-grid { grid-template-columns: 1fr 1fr; }
+
   .header-nav { display: none; }
   .nav-toggle { display: inline-flex; }
 
@@ -2166,20 +2230,34 @@ body.drawer-open { overflow: hidden; }
     grid-template-columns: 1fr;
   }
 
+  /* セクション英字キャプション */
+  .section-num { font-size: 0.66rem; letter-spacing: 0.28em; margin-bottom: 8px; }
+
+  /* ご利用パターン：スマホは2列 */
+  .usage-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .usage-card { padding: 26px 14px 20px; border-radius: 14px; }
+  .usage-num { font-size: 0.85rem; margin-bottom: 4px; }
+  .usage-icon-wrap { width: 52px; height: 52px; font-size: 1.5rem; margin-bottom: 12px; }
+  .usage-name { font-size: 0.95rem; margin-bottom: 10px; padding-bottom: 10px; }
+  .usage-desc { font-size: 0.78rem; line-height: 1.75; }
+  .usage-desc br { display: none; }
+
   /* ご相談カード スマホ調整 */
-  .consult-card { padding: 32px 20px; margin-bottom: 36px; border-radius: 18px; }
-  .consult-title { font-size: 1.45rem; line-height: 1.55; }
-  .consult-title .accent { font-size: 1.18em; }
-  .consult-lead { font-size: 0.92rem; line-height: 1.9; margin-bottom: 24px; }
-  .consult-cta-row { flex-direction: column; gap: 12px; }
-  .consult-btn { width: 100%; min-width: auto; font-size: 1.05rem !important; }
-  .usage-pattern-title { font-size: 1.15rem; }
-  .usage-pattern-sub { font-size: 0.85rem; margin-bottom: 22px; }
-  .usage-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .usage-card { padding: 18px 12px; }
-  .usage-icon-wrap { width: 46px; height: 46px; font-size: 1.4rem; margin-bottom: 10px; }
-  .usage-name { font-size: 0.95rem; }
-  .usage-desc { font-size: 0.78rem; line-height: 1.7; }
+  .consult-card { padding: 36px 20px; border-radius: 18px; }
+  .consult-badge { font-size: 0.66rem; margin-bottom: 16px; padding-bottom: 8px; }
+  .consult-title { font-size: 1.5rem; line-height: 1.55; letter-spacing: 0.05em; }
+  .consult-title .accent { padding: 0 4px; }
+  .consult-lead { font-size: 0.88rem; line-height: 1.95; margin-bottom: 26px; }
+  .consult-cta-row { grid-template-columns: 1fr; gap: 12px; }
+  .consult-btn { padding: 16px 18px; gap: 12px; }
+  .consult-btn-icon { width: 42px; height: 42px; font-size: 1.1rem; }
+  .consult-btn-label { font-size: 0.66rem; letter-spacing: 0.18em; }
+  .consult-btn-main { font-size: 1.1rem; }
+  .pricing-note { font-size: 0.76rem; margin-top: 24px; }
 
   .accordion-sub {
     display: none;
