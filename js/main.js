@@ -209,6 +209,87 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
+/* ==========================================================================
+   フォーム送信（FormSubmit.co 経由でメール送信＋自動返信）
+   ========================================================================== */
+
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/okudera@carrot.ocn.ne.jp';
+
+const AUTO_REPLY_TEXT = `この度はオクデラメディカル 貸しスタジオへ
+お問い合わせいただき、誠にありがとうございます。
+
+下記の内容で承りました。
+担当者より改めてご連絡差し上げますので、今しばらくお待ちください。
+
+お急ぎの場合は、お電話（03-3919-5111）にて
+お気軽にお問い合わせください。
+
+────────────────────────────
+オクデラメディカル 貸しスタジオ
+〒114-0022 東京都北区王子2-26-2
+ウエルネスオクデラビル 4階
+TEL: 03-3919-5111 ／ FAX: 03-3919-5114
+Email: okudera@carrot.ocn.ne.jp
+────────────────────────────
+
+※このメールは自動送信です。返信はできません。`;
+
+async function submitFormToBackend() {
+  const usage = document.getElementById('usage');
+  const duration = document.getElementById('duration');
+  const date = document.getElementById('date');
+  const message = document.getElementById('message');
+  const name = document.getElementById('name');
+  const phone = document.getElementById('phone');
+  const email = document.getElementById('email');
+
+  // 日時を読みやすいフォーマットに
+  let dateText = '';
+  if (date.value) {
+    const d = new Date(date.value);
+    dateText = `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日（${'日月火水木金土'[d.getDay()]}）${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')} 〜`;
+  }
+
+  const payload = {
+    'お名前': name.value.trim(),
+    '電話番号': phone.value.trim(),
+    'メールアドレス': email.value.trim() || '(未入力)',
+    'ご利用目的': usage.options[usage.selectedIndex]?.text || '',
+    'ご利用時間': duration.options[duration.selectedIndex]?.text || '',
+    'ご希望日時': dateText || '(未入力)',
+    'ご要望・第二希望日時など': message.value.trim() || '(なし)',
+    // --- FormSubmit設定 ---
+    _subject: '【貸しスタジオ】Webサイトから新しいお問い合わせがありました',
+    _template: 'table',
+    _captcha: 'false',
+  };
+
+  // メールが入力されていれば自動返信を設定（返信先もそちらに）
+  if (email.value.trim()) {
+    payload._autoresponse = AUTO_REPLY_TEXT;
+    payload._replyto = email.value.trim();
+  }
+
+  const res = await fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status}`);
+  }
+
+  const data = await res.json().catch(() => ({}));
+  if (data && data.success === 'false') {
+    throw new Error(data.message || '送信エラー');
+  }
+  return data;
+}
+
 function initReservationForm() {
   const form = document.getElementById('reservationForm');
   const successBox = document.getElementById('formSuccess');
@@ -231,18 +312,34 @@ function initReservationForm() {
   });
 
   // 送信
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     if (!validateStep(3)) return;
 
     const submitBtn = form.querySelector('.btn-submit');
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '送信中...'; }
+    const originalLabel = submitBtn?.textContent;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+    }
 
-    setTimeout(() => {
+    try {
+      await submitFormToBackend();
       form.hidden = true;
       successBox.hidden = false;
       successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 800);
+    } catch (err) {
+      console.error('Form submit error:', err);
+      alert(
+        '申し訳ございません。送信に失敗しました。\n\n' +
+        'お手数ですがお電話にてお問い合わせください。\n' +
+        '☎ 03-3919-5111'
+      );
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel || '📩 この内容で送信';
+      }
+    }
   });
 
   // 初期表示
