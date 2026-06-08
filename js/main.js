@@ -210,29 +210,11 @@ function escapeHtml(s) {
 }
 
 /* ==========================================================================
-   フォーム送信（FormSubmit.co 経由でメール送信＋自動返信）
+   フォーム送信（同一サーバーの contact.php へ POST → 受信メール＋自動返信）
    ========================================================================== */
 
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/okudera@carrot.ocn.ne.jp';
-
-const AUTO_REPLY_TEXT = `この度はオクデラメディカル 貸しスタジオへ
-お問い合わせいただき、誠にありがとうございます。
-
-下記の内容で承りました。
-担当者より改めてご連絡差し上げますので、今しばらくお待ちください。
-
-お急ぎの場合は、お電話（03-3919-5111）にて
-お気軽にお問い合わせください。
-
-────────────────────────────
-オクデラメディカル 貸しスタジオ
-〒114-0022 東京都北区王子2-26-2
-ウエルネスオクデラビル 4階
-TEL: 03-3919-5111 ／ FAX: 03-3919-5114
-Email: okudera@carrot.ocn.ne.jp
-────────────────────────────
-
-※このメールは自動送信です。返信はできません。`;
+// 同一ディレクトリの contact.php を呼ぶ（相対パス）
+const FORM_ENDPOINT = 'contact.php';
 
 async function submitFormToBackend() {
   const usage = document.getElementById('usage');
@@ -251,24 +233,14 @@ async function submitFormToBackend() {
   }
 
   const payload = {
-    'お名前': name.value.trim(),
-    '電話番号': phone.value.trim(),
-    'メールアドレス': email.value.trim() || '(未入力)',
-    'ご利用目的': usage.options[usage.selectedIndex]?.text || '',
-    'ご利用時間': duration.options[duration.selectedIndex]?.text || '',
-    'ご希望日時': dateText || '(未入力)',
-    'ご要望・第二希望日時など': message.value.trim() || '(なし)',
-    // --- FormSubmit設定 ---
-    _subject: '【貸しスタジオ】Webサイトから新しいお問い合わせがありました',
-    _template: 'table',
-    _captcha: 'false',
+    name: name.value.trim(),
+    phone: phone.value.trim(),
+    email: email.value.trim(),
+    usage: usage.options[usage.selectedIndex]?.text || '',
+    duration: duration.options[duration.selectedIndex]?.text || '',
+    date: dateText,
+    message: message.value.trim(),
   };
-
-  // メールが入力されていれば自動返信を設定（返信先もそちらに）
-  if (email.value.trim()) {
-    payload._autoresponse = AUTO_REPLY_TEXT;
-    payload._replyto = email.value.trim();
-  }
 
   const res = await fetch(FORM_ENDPOINT, {
     method: 'POST',
@@ -279,13 +251,21 @@ async function submitFormToBackend() {
     body: JSON.stringify(payload),
   });
 
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status}`);
+  // レスポンスが JSON でない場合（PHPが解釈されていない・404等）
+  const text = await res.text();
+  let data = {};
+  try {
+    data = JSON.parse(text);
+  } catch (e) {
+    throw new Error(
+      'サーバー応答の解析に失敗しました。\n' +
+      'contact.php が正しく配置・実行されているかご確認ください。\n' +
+      '（HTTPステータス: ' + res.status + '）'
+    );
   }
 
-  const data = await res.json().catch(() => ({}));
-  if (data && data.success === 'false') {
-    throw new Error(data.message || '送信エラー');
+  if (!res.ok || data.ok === false) {
+    throw new Error(data.error || `HTTP ${res.status}`);
   }
   return data;
 }
